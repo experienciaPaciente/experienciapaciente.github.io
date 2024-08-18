@@ -1,0 +1,37 @@
+header {
+    --page__body--padding: 6rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem var(--page__body--padding);
+    height: var(--header__height);
+    width: 100vw;
+    background: var(--header__bg--color);
+    box-sizing: border-box;
+    
+    @media screen and (max-width: 979px) {
+        --page__body--padding: 2rem;
+
+        #ep__logo--desktop {
+            display: none;
+        }
+    }
+
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--header__gap--horizontal);
+        // width: fit-content;
+
+        i {
+            font-size: var(--icon--size);
+        }
+    }
+
+    div ~ i.fa-bars {
+        display: none;
+    }
+}

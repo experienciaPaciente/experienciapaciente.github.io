@@ -1,0 +1,8 @@
+[carousel] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--carousel__gap);
+    width: var(--carousel__width);
+    // height: var(--carousel__height);
+    // overflow-x: scroll;
+}

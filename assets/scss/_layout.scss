@@ -1,0 +1,103 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // gap: var(--page__gap--vertical);
+    background-color: var(--page__body--bg);
+    position: relative;
+    
+    .circle--primary {
+        --circle__width: 180px;
+        --circle__height: 180px;
+        --circle__position--top: 1700px;
+        --circle__position--left: -100px;
+        
+        width: var(--circle__width);
+        height: var(--circle__height);
+        background: var(--primaryLighter);
+        border-radius: calc(var(--circle__width) / 2);
+        position: absolute;
+        top: var(--circle__position--top);
+        left: var(--circle__position--left);
+    }
+
+    .circle--secondary {
+        --circle__width: 70px;
+        --circle__height: 140px;
+        --circle__position--top: 1400px;
+        --circle__position--right: -var(--circle__width);
+        
+        width: var(--circle__width);
+        height: var(--circle__height);
+        background: var(--secondaryLight);
+        border-top-left-radius: var(--circle__width);
+        border-bottom-left-radius: var(--circle__width);
+        position: absolute;
+        top: var(--circle__position--top);
+        right: 0;
+    }
+
+    .circle--tertiary {
+        --circle__width: 140px;
+        --circle__height: 140px;
+        --circle__position--top: 450px;
+        --circle__position--left: -75px;
+        // --circle__position--right: 100px;
+
+        width: var(--circle__width);
+        height: var(--circle__height);
+        background: var(--tertiaryLight);
+        border-radius: calc(var(--circle__width) / 2);
+        position: absolute;
+        top: var(--circle__position--top);
+        left: var(--circle__position--left);
+    }
+
+    .circle--neutral {
+        --circle__width: 70px;
+        --circle__height: 140px;
+        --circle__position--top: 100px;
+        // --circle__position--left: 100px;
+        --circle__position--right: -var(--circle__width);
+
+        width: var(--circle__width);
+        height: var(--circle__height);
+        background: var(--secondaryLighter);
+        border-top-left-radius: var(--circle__width);
+        border-bottom-left-radius: var(--circle__width);
+        position: absolute;
+        top: var(--circle__position--top);
+        right: 0;
+    }
+}
+
+main {
+    // padding: var(--page__body--padding);
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        // gap: 48px;
+        width: 100vw;
+    }
+}
+
+
+// Imagenes
+img {
+    &.cover {
+        object-fit: cover;
+    }
+
+    &.contain {
+        object-fit: contain;
+    }
+
+    &.rounded {
+        border-radius: 25px;
+    }
+
+    &.circle {
+        border-radius: 50%;
+    }
+}

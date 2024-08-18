@@ -1,0 +1,67 @@
+@media screen and (min-width: 980px) {
+
+    header {
+        #ep__logo--responsive {
+            display: none;
+        }
+
+        #ep__logo--desktop {
+            display: block;
+            height: 100%;
+        }
+    }
+    
+    [panel] {
+        --panel__padding: 4rem var(--page__body--padding);
+        --panel__direction: row;
+        --panel__justify: space-between;
+        --panel__align: center;
+        
+        > img {
+            --panel__img--size: 50%;
+        }
+
+        &[type=transparent]:nth-child(1) {
+            --panel__direction: row-reverse;
+        }
+
+        span.card__wrapper--inner {
+            --panel__direction: column;
+            --panel__justify: space-between;
+            --panel__align: start;   
+            --panel__text--align: left;
+            --panel__title--size: 48px;
+            --panel__subtitle--size: 21px;
+            --panel__lineHeight: 1.9rem;
+        }
+        
+        div.card__wrapper--inner {
+            --panel__direction: row;
+            --panel__justify: space-between;
+            --panel__align: start;   
+            --panel__text--align: left;
+
+            display: flex;
+            flex-direction: var(--panel__direction);
+            justify-content: var(--panel__justify);
+            align-items: var(--panel__align);
+            width: var(--panel__width);
+            text-align: var(--panel__text--align);
+            gap: var(--panel__gap);
+        }
+    }
+
+    [card] {
+        
+    }
+
+    // Buttons
+    .btn__wrapper {
+        --panel__direction: row;
+        button {
+            --button__padding: .75rem 1.25rem;
+            --button__font--size: 14px;
+        }
+    }
+
+}

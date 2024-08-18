@@ -1,0 +1,71 @@
+.accordion-container {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+.theme-ml {
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0);
+    font: inherit;
+
+
+    .andes-accordion {
+        // padding: 24px;
+        color: rgba(0, 0, 0, 0.9);
+        font-weight: 400;
+        height: auto;
+        border: rgba(0, 0, 0, 0);
+        transition: 0.4s;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        border-radius: 6px;
+
+        &.andes-accordion--medium {
+            font-size: 16px;
+            line-height: 20px;
+            min-height: 48px;
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 2px 0px;
+            margin-bottom: var(--cardPadding);
+        } 
+
+        .andes-accordion-header {
+            // width: 100%;
+            cursor: pointer;
+            padding: var(--cardPadding) var(--cardPadding) 16px var(--cardPadding);
+            font-size: 20px;
+            line-height: 25px;
+
+            &-container__title {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            &:hover {
+                background: rgb(239, 239, 239);
+            }
+
+            &-container__indicator {
+
+            }
+        }
+
+        .andes-accordion-panel-transition {
+            display: grid;
+            grid-template-rows: 1fr;
+            transition: grid-template-rows 300ms ease-in-out;
+            padding: 16px var(--cardPadding) var(--cardPadding) var(--cardPadding);
+            row-gap: var(--cardPadding);
+        }
+    }
+}

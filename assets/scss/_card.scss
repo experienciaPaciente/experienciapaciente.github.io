@@ -1,0 +1,96 @@
+%baseCard {
+    display: flex;
+    flex-direction: var(--card__direction);
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card__bg--color);
+    box-shadow: var(--card__shadow);
+    padding: var(--card__padding);
+    gap: var(--card__gap);
+    text-align: var(--card__text--align);
+    border-radius: var(--card__border--radius);
+    height: var(--card__height);
+    max-height: 180px;
+}
+
+[list] {
+    display: flex;
+    flex-direction: column;
+    gap: var(--card__gap);
+    width: 100%;
+}
+
+[card] {
+    @extend %baseCard;
+            
+    &[type=default] {
+        --card__bg--color: white;
+        @extend %baseCard;
+    }
+
+    &[type=transparent] {
+        --card__bg--color: transparent;
+        --card__shadow: none;
+        @extend %baseCard;
+    }
+    
+    &[type=dark] {
+        --card__bg--color: var(--primaryLighter);
+        --card__border--radius: 50%;
+        @extend %baseCard;
+    }
+
+    &[size=sm] {
+        --card__title--size: 0.9rem;
+        --card__subtitle--size: 0.75rem;
+        --card__padding: .75rem 1rem;
+        --card__height: fit-content;
+        @extend %baseCard;
+    }
+
+    &[size=lg] {
+        --card__title--size: 1.7rem;
+        --card__subtitle--size: 1rem;
+        @extend %baseCard;
+    }
+
+    &[direction=row] {
+        --card__direction: row;
+        --card__text--align: left;
+        @extend %baseCard;
+    }
+
+    &[direction=column] {
+        --card__direction: column;
+        --card__text--align: center;
+        @extend %baseCard;
+    }
+
+    .title__wrapper--row {
+        width: 100%;
+    }
+
+    > img {
+        width: var(--card__img--size);
+        height: var(--card__img--size);
+    }
+
+    > i {
+        --card__title--size: 1.6rem;
+        color: var(--secondary);
+        font-size: var(--card__title--size);
+    }
+
+    .card__title {
+        --card__lineHeight: 1.5rem;
+        color: var(--card__title--color);
+        font-size: var(--card__title--size);
+        line-height: var(--card__lineHeight);
+    }
+    
+    .card__subtitle {
+        color: var(--card__subtitle--color);
+        font-size: var(--card__subtitle--size);
+        line-height: var(--card__lineHeight);
+    }
+}

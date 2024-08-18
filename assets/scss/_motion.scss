@@ -1,0 +1,37 @@
+// Mixin para delay de animacion 
+@mixin stallTiming($hold, $start, $end, $gap) {
+    $delay: $hold;
+    @for $i from $start through $end {
+    $delay: $delay + $gap;
+    
+        &:nth-child(#{$i}) {
+        animation-delay: #{$delay}ms;
+    
+        }
+    }
+}
+    
+    @keyframes show {
+        0% { 
+            opacity: 0;
+        }
+        100% { 
+            opacity: 1;
+        }
+    }
+
+// Clase para invocar animacion
+.fade-in {
+    opacity: 0;
+    animation-name: show;
+    animation-duration: 1s; 
+    animation-timing-function: linear; 
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    &.delay {
+        // Aplico mixin para delay en items de menu
+            @include stallTiming(5, 1, 10, 100);
+    }    
+}
