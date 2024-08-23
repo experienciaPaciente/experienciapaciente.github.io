@@ -644,6 +644,18 @@ img.circle {
   [panel][type=transparent]:nth-child(1) {
     --panel__direction: row-reverse;
   }
+  [panel]:not(:first-child) .panel__title {
+    --panel__title--size: 36px;
+    color: var(--panel__title--color);
+    font-size: var(--panel__title--size);
+    font-weight: var(--panel__title--weight);
+  }
+  [panel]:not(:first-child) .panel__subtitle {
+    --panel__subtitle--size: 18px;
+    color: var(--panel__subtitle--color);
+    font-size: var(--panel__subtitle--size);
+    line-height: var(--panel__lineHeight);
+  }
   [panel] span.card__wrapper--inner {
     --panel__direction: column;
     --panel__justify: space-between;
@@ -802,8 +814,6 @@ button[class$="--tertiary"] {
   gap: var(--card__gap);
   text-align: var(--card__text--align);
   border-radius: var(--card__border--radius);
-  height: var(--card__height);
-  max-height: 180px;
 }
 
 [list] {
@@ -847,7 +857,7 @@ button[class$="--tertiary"] {
 }
 [card] > img {
   width: var(--card__img--size);
-  height: var(--card__img--size);
+  height: 96px;
 }
 [card] > i {
   --card__title--size: 1.6rem;
@@ -959,6 +969,29 @@ header div ~ i.fa-bars {
 [panel] > img {
   width: var(--panel__img--size);
   height: var(--panel__img--size);
+}
+[panel] .panel__prefix {
+  --panel__subtitle--size: 12px;
+  text-transform: uppercase;
+  font-size: var(--panel__subtitle--size);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+}
+[panel] .panel__prefix .prefix__circle {
+  --panel__subtitle--size: 11.5px;
+  font-size: var(--panel__subtitle--size);
+  padding: calc(var(--panel__subtitle--size) * 1.5);
+  height: calc(var(--panel__subtitle--size) * 3);
+  width: calc(var(--panel__subtitle--size) * 3);
+  border-radius: 50%;
+  background-color: var(--secondaryLight);
+  color: var(--secondary);
+  font-weight: bolder;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: calc(var(--panel__subtitle--size) / 2);
 }
 [panel] .panel__title {
   color: var(--panel__title--color);

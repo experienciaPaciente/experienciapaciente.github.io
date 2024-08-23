@@ -25,6 +25,22 @@
             --panel__direction: row-reverse;
         }
 
+        &:not(:first-child) {
+            .panel__title {
+                --panel__title--size: 36px;
+                color: var(--panel__title--color);
+                font-size: var(--panel__title--size);
+                font-weight: var(--panel__title--weight);
+            }
+            
+            .panel__subtitle {
+                --panel__subtitle--size: 18px;
+                color: var(--panel__subtitle--color);
+                font-size: var(--panel__subtitle--size);
+                line-height: var(--panel__lineHeight);
+            }
+        }
+
         span.card__wrapper--inner {
             --panel__direction: column;
             --panel__justify: space-between;

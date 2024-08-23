@@ -9,8 +9,8 @@
     gap: var(--card__gap);
     text-align: var(--card__text--align);
     border-radius: var(--card__border--radius);
-    height: var(--card__height);
-    max-height: 180px;
+    // height: var(--card__height);
+    // max-height: 180px;
 }
 
 [list] {
@@ -72,7 +72,7 @@
 
     > img {
         width: var(--card__img--size);
-        height: var(--card__img--size);
+        height: 96px;
     }
 
     > i {

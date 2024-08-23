@@ -16,7 +16,7 @@ const panels = [
         id: 2,
         type: 'rounded',
         title: 'Cómo funciona',
-        subtitle: `Un flujo colaborativo entre todos los participantes en el proceso de cuidado y atención del paciente, sea médico, administrativo, familiar o el propio paciente.`,
+        subtitle: `Con experienciaPaciente, el acceso a tus datos de salud es tan simple como necesario. Aquí te explicamos cómo funciona:`,
         img: '',
         btnLink: 'Playground',
         btnLink2: '',
@@ -26,24 +26,24 @@ const panels = [
         items: [
             {
                 id: 1,
-                title: 'Abrí la app de experienciaPaciente',
-                subtitle: 'Puede ser en desktop o tu celular. Si aún no tenés usuario, podés registrarte aquí.',
+                title: 'Registra y Guarda',
+                subtitle: 'Escanea, valida y guarda todos tus datos de salud en un solo lugar.',
                 icon: 'desktop',
                 imgUrl: '',
                 direction: 'row',
             },
             {
                 id: 2,
-                title: 'Escaneá el código de tu consulta',
-                subtitle: 'Ingresá a tu cuenta, presiona scanear y enfoca al QR que el equipo d salud te proveerá.',
+                title: 'Accede en Cualquier Momento',
+                subtitle: 'Consulta tu historial médico desde cualquier dispositivo, cuando lo necesites.',
                 icon: 'code',
                 imgUrl: '',
                 direction: 'row',
             },
             {
                 id: 3,
-                title: 'Guardá tus datos de salud',
-                subtitle: 'Una vez escaneado, la información se completará en tu historial. Checkeá que esté todo bien, guardá y listo!',
+                title: 'Comparte con Seguridad',
+                subtitle: 'Comparte datos con profesionales de salud y familiares cuando lo necesites.',
                 icon: 'save',
                 imgUrl: '',
                 direction: 'row',
@@ -53,22 +53,46 @@ const panels = [
     {
         id: 3,
         type: 'transparent',
-        title: 'Qué significa fuera del círculo',
-        subtitle: `Iniciativa no gubernamental y sin fines de lucro aue promueve la accesibilidad v descentralización de los datos de salud a
-Traves de nertomientos diditoles.`,
+        title: 'Fuera del Círculo: Empoderando al Paciente',
+        subtitle: `experienciaPaciente rompe con el sistema cerrado de salud, ofreciéndote control total sobre tus datos, privacidad, y autonomía en el manejo de tu salud.`,
         img: './assets/img/ep__img--01.png',
         btnLink: 'Quiero saber mas',
         btnLink2: '',
         btnUrl: '',
         btnUrl2: '',
         itemsType: 'list',
-        items: []
+        items: [
+            // {
+            //     id: 1,
+            //     title: 'Descentralización',
+            //     subtitle: 'Accede a tus datos en un solo lugar sin depender de otras instituciones.',
+            //     icon: '',
+            //     imgUrl: './assets/img/ep__video--qr.png',
+            //     direction: 'column',
+            // },
+            // {
+            //     id: 2,
+            //     title: 'Integración Simple',
+            //     subtitle: 'Conecta y organiza toda tu información de salud a través de un código QR.',
+            //     icon: '',
+            //     imgUrl: './assets/img/ep__video--qr.png',
+            //     direction: 'column',
+            // },
+            // {
+            //     id: 3,
+            //     title: 'Autonomía y Privacidad',
+            //     subtitle: 'Protege tu información decidiendo quienes y cuándo acceden a tus datos de salud.',
+            //     icon: '',
+            //     imgUrl: './assets/img/ep__video--qr.png',
+            //     direction: 'column',
+            // },
+        ]
     },
     {
         id: 5,
         type: 'transparent',
-        title: 'Iniciativas',
-        subtitle: `experienciaPaciente se desarrolla en diversas áreas que mejoran la experiencia de los paciente y sus familiares`,
+        title: 'Facilita Tu Trabajo, Mejora la Atención',
+        subtitle: `experienciaPaciente optimiza el intercambio de información entre profesionales de salud, promoviendo una atención más fluida y coordinada.`,
         img: '',
         btnLink: '',
         btnLink2: '',
@@ -78,24 +102,24 @@ Traves de nertomientos diditoles.`,
         items: [
             {
                 id: 1,
-                title: 'Item 1',
-                subtitle: 'Lorem ipsum...',
+                title: 'Interoperabilidad con QR',
+                subtitle: 'Utiliza códigos QR para acceder de manera rápida a los datos de salud del paciente.',
                 icon: '',
                 imgUrl: './assets/img/ep__video--qr.png',
                 direction: 'column',
             },
             {
                 id: 2,
-                title: 'Item 1',
-                subtitle: 'Lorem ipsum...',
+                title: 'Coordinación Efectiva',
+                subtitle: 'Mejora la comunicación entre diferentes profesionales de la salud con acceso a información consolidada.',
                 icon: '',
                 imgUrl: './assets/img/ep__video--qr.png',
                 direction: 'column',
             },
             {
                 id: 3,
-                title: 'Item 1',
-                subtitle: 'Lorem ipsum...',
+                title: 'Optimización del Tiempo',
+                subtitle: 'Reduce la carga administrativa con procesos simplificados y una gestión más eficiente.',
                 icon: '',
                 imgUrl: './assets/img/ep__video--qr.png',
                 direction: 'column',
@@ -105,9 +129,8 @@ Traves de nertomientos diditoles.`,
     {
         id: 4,
         type: 'dark',
-        title: 'Quiero participar',
-        subtitle: `Iniciativa no gubernamental y sin fines de lucro aue promueve la accesibilidad v descentralización de los datos de salud a
-Traves de nertomientos diditoles.`,
+        title: 'Sé Parte del Cambio en la Salud',
+        subtitle: `experienciaPaciente es un proyecto colaborativo y open-source que reúne a pacientes, profesionales de la salud y desarrolladores para crear un sistema de salud más justo, accesible e innovador. Tu participación es clave para esta (r)evolución!`,
         img: '',
         btnLink: '',
         btnLink2: '',
@@ -145,11 +168,13 @@ Traves de nertomientos diditoles.`,
 
 function getPanels(panel) {
     return `
-    ${panel.type != 'transparent' ? `<span class="circle__half--top"></span>` : ''}
         <section panel type="${panel.type}" class="fade-in delay">
             ${panel.img ? `<img src="${panel.img}" alt="${panel.img}">` : ''}
             <div class="card__wrapper--inner">
                 <span class="card__wrapper--inner">
+                    <div class="panel__prefix">
+                        Fuera del<span class="prefix__circle">Circulo</span>
+                    </div>
                     <h3 class="panel__title">${panel.title}</h3>
                     <p class="panel__subtitle">${panel.subtitle}</p>
                     <span class="btn__wrapper">
@@ -171,7 +196,6 @@ function getPanels(panel) {
                 </ul>`: ''}
             </div>
         </section>
-    ${panel.type === 'rounded' ? `<span class="circle__half--bottom"></span>` : ''}
     `
 }
 
