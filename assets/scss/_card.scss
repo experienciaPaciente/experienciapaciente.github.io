@@ -1,7 +1,7 @@
 %baseCard {
     display: flex;
     flex-direction: var(--card__direction);
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     background-color: var(--card__bg--color);
     box-shadow: var(--card__shadow);

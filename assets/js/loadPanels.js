@@ -53,9 +53,9 @@ const panels = [
     {
         id: 3,
         type: 'transparent',
-        title: 'Fuera del Círculo: Empoderando al Paciente',
+        title: 'Empoderando al Paciente',
         subtitle: `experienciaPaciente rompe con el sistema cerrado de salud, ofreciéndote control total sobre tus datos, privacidad, y autonomía en el manejo de tu salud.`,
-        img: './assets/img/ep__img--01.png',
+        img: './assets/img/ep__img--05.png',
         btnLink: 'Quiero saber mas',
         btnLink2: '',
         btnUrl: '',
@@ -90,7 +90,7 @@ const panels = [
     },
     {
         id: 5,
-        type: 'transparent',
+        type: 'dark',
         title: 'Facilita Tu Trabajo, Mejora la Atención',
         subtitle: `experienciaPaciente optimiza el intercambio de información entre profesionales de salud, promoviendo una atención más fluida y coordinada.`,
         img: '',
@@ -105,7 +105,7 @@ const panels = [
                 title: 'Interoperabilidad con QR',
                 subtitle: 'Utiliza códigos QR para acceder de manera rápida a los datos de salud del paciente.',
                 icon: '',
-                imgUrl: './assets/img/ep__video--qr.png',
+                imgUrl: './assets/img/ep__img--02.png',
                 direction: 'column',
             },
             {
@@ -113,7 +113,7 @@ const panels = [
                 title: 'Coordinación Efectiva',
                 subtitle: 'Mejora la comunicación entre diferentes profesionales de la salud con acceso a información consolidada.',
                 icon: '',
-                imgUrl: './assets/img/ep__video--qr.png',
+                imgUrl: './assets/img/ep__img--03.png',
                 direction: 'column',
             },
             {
@@ -121,49 +121,62 @@ const panels = [
                 title: 'Optimización del Tiempo',
                 subtitle: 'Reduce la carga administrativa con procesos simplificados y una gestión más eficiente.',
                 icon: '',
-                imgUrl: './assets/img/ep__video--qr.png',
+                imgUrl: './assets/img/ep__img--04.png',
                 direction: 'column',
             },
         ]
     },
     {
-        id: 4,
-        type: 'dark',
-        title: 'Sé Parte del Cambio en la Salud',
-        subtitle: `experienciaPaciente es un proyecto colaborativo y open-source que reúne a pacientes, profesionales de la salud y desarrolladores para crear un sistema de salud más justo, accesible e innovador. Tu participación es clave para esta (r)evolución!`,
+        id: 6,
+        type: 'transparent',
+        title: '',
+        subtitle: '',
         img: '',
         btnLink: '',
         btnLink2: '',
         btnUrl: '',
         btnUrl2: '',
-        itemsType: 'list',
-        items: [
-            {
-                id: 1,
-                title: 'Item 1',
-                subtitle: 'Lorem ipsum...',
-                icon: 'user',
-                imgUrl: '',
-                direction: 'row',
-            },
-            {
-                id: 2,
-                title: 'Item 1',
-                subtitle: 'Lorem ipsum...',
-                icon: 'phone',
-                imgUrl: '',
-                direction: 'row',
-            },
-            {
-                id: 3,
-                title: 'Item 1',
-                subtitle: 'Lorem ipsum...',
-                icon: 'video',
-                imgUrl: '',
-                direction: 'row',
-            },
-        ]
+        itemsType: '',
+        items: []
     }
+    // {
+    //     id: 4,
+    //     type: 'dark',
+    //     title: 'Sé Parte del Cambio en la Salud',
+    //     subtitle: `experienciaPaciente es un proyecto colaborativo y open-source que reúne a pacientes, profesionales de la salud y desarrolladores para crear un sistema de salud más justo, accesible e innovador. Tu participación es clave para esta (r)evolución!`,
+    //     img: '',
+    //     btnLink: '',
+    //     btnLink2: '',
+    //     btnUrl: '',
+    //     btnUrl2: '',
+    //     itemsType: 'list',
+    //     items: [
+    //         {
+    //             id: 1,
+    //             title: 'Item 1',
+    //             subtitle: 'Lorem ipsum...',
+    //             icon: 'user',
+    //             imgUrl: '',
+    //             direction: 'row',
+    //         },
+    //         {
+    //             id: 2,
+    //             title: 'Item 1',
+    //             subtitle: 'Lorem ipsum...',
+    //             icon: 'phone',
+    //             imgUrl: '',
+    //             direction: 'row',
+    //         },
+    //         {
+    //             id: 3,
+    //             title: 'Item 1',
+    //             subtitle: 'Lorem ipsum...',
+    //             icon: 'video',
+    //             imgUrl: '',
+    //             direction: 'row',
+    //         },
+    //     ]
+    // }
 ] 
 
 function getPanels(panel) {
@@ -175,8 +188,8 @@ function getPanels(panel) {
                     <div class="panel__prefix">
                         Fuera del<span class="prefix__circle">Circulo</span>
                     </div>
-                    <h3 class="panel__title">${panel.title}</h3>
-                    <p class="panel__subtitle">${panel.subtitle}</p>
+                    ${panel.title ? `<h3 class="panel__title">${panel.title}</h3>` : ''}
+                    ${panel.subtitle ? `<p class="panel__subtitle">${panel.subtitle}</p>` : ''}
                     <span class="btn__wrapper">
                         ${panel.btnLink ? `<button class="btn__filled--primary">${panel.btnLink}</button>`: ''}
                         ${panel.btnLink2 ? `<button class="btn__outline--secondary">${panel.btnLink2}</button>`: ''}   

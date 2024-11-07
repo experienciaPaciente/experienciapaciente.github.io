@@ -69,6 +69,22 @@ body {
         top: var(--circle__position--top);
         right: 0;
     }
+
+    .circle--primaryLighter {
+        --circle__width: 90px;
+        --circle__height: 180px;
+        --circle__position--top: 2200px;
+        --circle__position--right: -var(--circle__width);
+        
+        width: var(--circle__width);
+        height: var(--circle__height);
+        background: var(--primaryLighter);
+        border-top-left-radius: var(--circle__width);
+        border-bottom-left-radius: var(--circle__width);
+        position: absolute;
+        top: var(--circle__position--top);
+        right: 0;
+    }
 }
 
 main {

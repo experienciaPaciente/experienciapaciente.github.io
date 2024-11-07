@@ -362,6 +362,7 @@ a.andes-typography--link, ul.andes-typography--link, li.andes-typography--link {
   --secondaryLight: #C7E2FF;
   --secondaryLighter: #ECF5FF;
   --tertiaryLight: #FFF4E3;
+  --tertiaryLighter: #E6E6FA;
   --shadow: rgba(140, 140, 140, 0.5);
   --gradient: linear-gradient(to top right, #317aa0, #0abebb, #87d1b6);
   --info: teal;
@@ -417,11 +418,12 @@ a.andes-typography--link, ul.andes-typography--link, li.andes-typography--link {
   /* Panel */
   --panel__border--radius: 6px;
   --panel__bg--color: white;
-  --panel__img--size: 140px;
+  --panel__img--size: 30vw;
+  --panel__img--radius: 50%;
   --panel__align: center;
   --panel__justify: space-between;
   --panel__text--align: center;
-  --panel__gap: 24px;
+  --panel__gap: 48px;
   --panel__title--size: 1.25rem;
   --panel__title--color: var(--primary);
   --panel__title--weight: 500;
@@ -603,6 +605,20 @@ body .circle--neutral {
   top: var(--circle__position--top);
   right: 0;
 }
+body .circle--primaryLighter {
+  --circle__width: 90px;
+  --circle__height: 180px;
+  --circle__position--top: 2200px;
+  --circle__position--right: -var(--circle__width);
+  width: var(--circle__width);
+  height: var(--circle__height);
+  background: var(--primaryLighter);
+  border-top-left-radius: var(--circle__width);
+  border-bottom-left-radius: var(--circle__width);
+  position: absolute;
+  top: var(--circle__position--top);
+  right: 0;
+}
 
 main #container {
   display: flex;
@@ -638,11 +654,20 @@ img.circle {
     --panel__justify: space-between;
     --panel__align: center;
   }
-  [panel] > img {
-    --panel__img--size: 50%;
+  [panel]:first-child > img {
+    --panel__img--size: 50%!important;
+    --panel__img--radius: 0;
   }
   [panel][type=transparent]:nth-child(1) {
     --panel__direction: row-reverse;
+  }
+  [panel] .panel__prefix {
+    --panel__subtitle--size: 12px!important;
+    font-size: var(--panel__subtitle--size);
+  }
+  [panel] .panel__prefix .prefix__circle {
+    --panel__subtitle--size: 11.5px!important;
+    font-size: var(--panel__subtitle--size);
   }
   [panel]:not(:first-child) .panel__title {
     --panel__title--size: 36px;
@@ -668,7 +693,7 @@ img.circle {
   [panel] div.card__wrapper--inner {
     --panel__direction: row;
     --panel__justify: space-between;
-    --panel__align: start;
+    --panel__align: flex-end;
     --panel__text--align: left;
     display: flex;
     flex-direction: var(--panel__direction);
@@ -685,6 +710,11 @@ img.circle {
   .btn__wrapper button {
     --button__padding: .75rem 1.25rem;
     --button__font--size: 14px;
+  }
+
+  body[type=form] {
+    --page__body--padding: 1rem;
+    padding: var(--page__body--padding);
   }
 }
 .accordion-container {
@@ -806,7 +836,7 @@ button[class$="--tertiary"] {
 [card][direction=column], [card][direction=row], [card][size=lg], [card][size=sm], [card][type=dark], [card][type=transparent], [card][type=default], [card] {
   display: flex;
   flex-direction: var(--card__direction);
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   background-color: var(--card__bg--color);
   box-shadow: var(--card__shadow);
@@ -883,6 +913,205 @@ button[class$="--tertiary"] {
   width: var(--carousel__width);
 }
 
+form[type=flex],
+fieldset[type=flex],
+section[type=flex] {
+  display: flex;
+  flex-direction: column;
+  column-gap: var(--form__gap--horizontal);
+  row-gap: var(--form__gap--vertical);
+  padding: var(--form__padding);
+}
+form[type=flex] div.form__input-wrapper ~ button,
+fieldset[type=flex] div.form__input-wrapper ~ button,
+section[type=flex] div.form__input-wrapper ~ button {
+  align-self: flex-end;
+  width: 100%;
+}
+form[type=flex] body > form,
+fieldset[type=flex] body > form,
+section[type=flex] body > form {
+  padding: 0 !important;
+}
+form[type=wrap],
+fieldset[type=wrap],
+section[type=wrap] {
+  flex-flow: wrap !important;
+  column-gap: var(--form__gap--horizontal);
+}
+form[type=grid],
+fieldset[type=grid],
+section[type=grid] {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+form .form__input-wrapper,
+fieldset .form__input-wrapper,
+section .form__input-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--form__label--marginBottom);
+  flex-grow: 1;
+}
+form .form__input-wrapper.form__signature,
+fieldset .form__input-wrapper.form__signature,
+section .form__input-wrapper.form__signature {
+  max-width: 300px;
+}
+form .form__input-wrapper--row,
+fieldset .form__input-wrapper--row,
+section .form__input-wrapper--row {
+  display: flex;
+  flex-direction: row;
+}
+form fieldset,
+fieldset fieldset,
+section fieldset {
+  grid-column: span 2;
+  padding: 1.25rem;
+}
+@media screen and (max-width: 480px) {
+  form,
+fieldset,
+section {
+    grid-column: span 1 !important;
+  }
+  form[type=flex] body form,
+fieldset[type=flex] body form,
+section[type=flex] body form {
+    --form__padding: 0.5rem;
+  }
+  form[type=flex] fieldset > form,
+fieldset[type=flex] fieldset > form,
+section[type=flex] fieldset > form {
+    padding: 0.15rem !important;
+  }
+  form[type=flex] .p-accordion-content,
+fieldset[type=flex] .p-accordion-content,
+section[type=flex] .p-accordion-content {
+    padding: 0.5rem;
+  }
+}
+form .btn-group--horizontal,
+fieldset .btn-group--horizontal,
+section .btn-group--horizontal {
+  align-items: flex-end;
+}
+form .btn-group--horizontal button,
+fieldset .btn-group--horizontal button,
+section .btn-group--horizontal button {
+  margin-top: 1.5rem;
+  white-space: pre-wrap !important;
+  height: min-content;
+}
+form .btn-group--horizontal button.btn--tertiary,
+fieldset .btn-group--horizontal button.btn--tertiary,
+section .btn-group--horizontal button.btn--tertiary {
+  text-decoration: none;
+}
+form label,
+fieldset label,
+section label {
+  font-weight: var(--form__label--weight);
+  font-size: var(--form__label--size);
+}
+form label ~ span.required,
+fieldset label ~ span.required,
+section label ~ span.required {
+  color: var(--danger--dark);
+  font-weight: bold;
+}
+form label ~ input,
+fieldset label ~ input,
+section label ~ input {
+  width: 100%;
+}
+form td > span.required,
+fieldset td > span.required,
+section td > span.required {
+  color: var(--danger--dark);
+  font-weight: bold;
+}
+form fieldset > legend.required::after,
+fieldset fieldset > legend.required::after,
+section fieldset > legend.required::after {
+  content: " *";
+  color: var(--danger--dark);
+  font-weight: bold;
+}
+form footer button,
+fieldset footer button,
+section footer button {
+  max-width: fit-content !important;
+}
+form [type=form],
+fieldset [type=form],
+section [type=form] {
+  padding: 0 !important;
+  justify-content: flex-start;
+  height: 100%;
+}
+form p-checkbox > label,
+form p-checkbox ~ label,
+form p-radioButton > label,
+form p-radioButton ~ label,
+fieldset p-checkbox > label,
+fieldset p-checkbox ~ label,
+fieldset p-radioButton > label,
+fieldset p-radioButton ~ label,
+section p-checkbox > label,
+section p-checkbox ~ label,
+section p-radioButton > label,
+section p-radioButton ~ label {
+  --form__label--weight: normal;
+}
+form .p-dropdown,
+form .p-inputtext,
+form input[type=text],
+form p-inputMask,
+fieldset .p-dropdown,
+fieldset .p-inputtext,
+fieldset input[type=text],
+fieldset p-inputMask,
+section .p-dropdown,
+section .p-inputtext,
+section input[type=text],
+section p-inputMask {
+  width: 100% !important;
+}
+form .p-dropdown,
+fieldset .p-dropdown,
+section .p-dropdown {
+  max-width: 280px;
+  text-overflow: ellipsis;
+}
+form textarea,
+fieldset textarea,
+section textarea {
+  width: 100% !important;
+}
+form label ~ p-inputswitch,
+fieldset label ~ p-inputswitch,
+section label ~ p-inputswitch {
+  --form__label--weight: normal;
+}
+form p-checkbox ~ textarea,
+form p-inputswitch ~ textarea,
+fieldset p-checkbox ~ textarea,
+fieldset p-inputswitch ~ textarea,
+section p-checkbox ~ textarea,
+section p-inputswitch ~ textarea {
+  display: block;
+  margin: 1rem 0;
+}
+form p-checkbox ~ label ~ textarea,
+form p-inputswitch ~ label ~ textarea,
+fieldset p-checkbox ~ label ~ textarea,
+fieldset p-inputswitch ~ label ~ textarea,
+section p-checkbox ~ label ~ textarea,
+section p-inputswitch ~ label ~ textarea {
+  margin: 0;
+}
+
 header {
   --page__body--padding: 6rem;
   display: flex;
@@ -928,6 +1157,10 @@ header div ~ i.fa-bars {
   gap: var(--panel__gap);
 }
 
+[panel]:first-child > img {
+  --panel__img--size: 75%;
+  --panel__img--radius: 0;
+}
 [panel]:not([type=rounded], [type=dark]) {
   margin-bottom: 3rem;
 }
@@ -954,10 +1187,11 @@ header div ~ i.fa-bars {
   --panel__width: 100%;
 }
 [panel][type=dark] {
-  --panel__bg--color: var(--primary);
-  --panel__title--color: white;
-  --panel__subtitle--color: white;
+  --panel__bg--color: var(--tertiaryLighter);
+  --panel__title--color: var(--secondary);
+  --panel__subtitle--color: var(--neutral);
   --panel__border--radius: 0;
+  --panel__shadow: none;
 }
 [panel][direction=horizontal] {
   --panel__direction: row;
@@ -969,9 +1203,11 @@ header div ~ i.fa-bars {
 [panel] > img {
   width: var(--panel__img--size);
   height: var(--panel__img--size);
+  border-radius: var(--panel__img--radius);
+  object-fit: cover;
 }
 [panel] .panel__prefix {
-  --panel__subtitle--size: 12px;
+  --panel__subtitle--size: 10px;
   text-transform: uppercase;
   font-size: var(--panel__subtitle--size);
   color: var(--primary);
@@ -979,7 +1215,7 @@ header div ~ i.fa-bars {
   align-items: center;
 }
 [panel] .panel__prefix .prefix__circle {
-  --panel__subtitle--size: 11.5px;
+  --panel__subtitle--size: 9.5px;
   font-size: var(--panel__subtitle--size);
   padding: calc(var(--panel__subtitle--size) * 1.5);
   height: calc(var(--panel__subtitle--size) * 3);
@@ -992,6 +1228,13 @@ header div ~ i.fa-bars {
   align-items: center;
   justify-content: center;
   margin-left: calc(var(--panel__subtitle--size) / 2);
+}
+[panel][type=transparent]:nth-child(5) .panel__prefix {
+  --panel__subtitle--size: 21px!important;
+}
+[panel][type=transparent]:nth-child(5) .panel__prefix .prefix__circle {
+  --panel__subtitle--size: 20.5px!important;
+  font-size: var(--panel__subtitle--size);
 }
 [panel] .panel__title {
   color: var(--panel__title--color);
