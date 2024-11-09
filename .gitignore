@@ -1,6 +1,3 @@
-# Ignore all .png files
-*.png
-
 # Ignore macOS Trash files
 .DS_Store
 .Trashes
