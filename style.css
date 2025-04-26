@@ -23,7 +23,6 @@ body {
   background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
-  gap: var(--bodyGap);
 }
 
 /**
@@ -423,7 +422,7 @@ a.andes-typography--link, ul.andes-typography--link, li.andes-typography--link {
   --panel__align: center;
   --panel__justify: space-between;
   --panel__text--align: center;
-  --panel__gap: 48px;
+  --panel__gap: 1rem;
   --panel__title--size: 1.25rem;
   --panel__title--color: var(--primary);
   --panel__title--weight: 500;
@@ -438,7 +437,7 @@ a.andes-typography--link, ul.andes-typography--link, li.andes-typography--link {
   --panel__subfix--color: gray;
   --panel__subfix--weight: normal;
   --panel__subfix--align: center;
-  --panel__padding: 4rem;
+  --panel__padding: 2rem;
   --panel__shadow: 2px 2px 4px 0px rgba(180, 180, 180, 0.5);
   --panel__width: 100%;
   --panel__height: 25%;
@@ -548,13 +547,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
   background-color: var(--page__body--bg);
   position: relative;
 }
 body .circle--primary {
   --circle__width: 180px;
   --circle__height: 180px;
-  --circle__position--top: 1700px;
+  --circle__position--top: 50%;
   --circle__position--left: -100px;
   width: var(--circle__width);
   height: var(--circle__height);
@@ -567,7 +567,7 @@ body .circle--primary {
 body .circle--secondary {
   --circle__width: 70px;
   --circle__height: 140px;
-  --circle__position--top: 1400px;
+  --circle__position--top: 20%;
   --circle__position--right: -var(--circle__width);
   width: var(--circle__width);
   height: var(--circle__height);
@@ -620,10 +620,8 @@ body .circle--primaryLighter {
   right: 0;
 }
 
-main #container {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
+main {
+  height: 100%;
 }
 
 img.cover {
@@ -639,7 +637,7 @@ img.circle {
   border-radius: 50%;
 }
 
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 860px) {
   header #ep__logo--responsive {
     display: none;
   }
@@ -649,10 +647,12 @@ img.circle {
   }
 
   [panel] {
+    --page__body--padding: 6rem;
     --panel__padding: 4rem var(--page__body--padding);
     --panel__direction: row;
     --panel__justify: space-between;
     --panel__align: center;
+    --panel__gap: 1rem;
   }
   [panel]:first-child > img {
     --panel__img--size: 50%!important;
@@ -689,6 +689,7 @@ img.circle {
     --panel__title--size: 48px;
     --panel__subtitle--size: 21px;
     --panel__lineHeight: 1.9rem;
+    --panel__gap: 2.5rem;
   }
   [panel] div.card__wrapper--inner {
     --panel__direction: row;
@@ -701,7 +702,6 @@ img.circle {
     align-items: var(--panel__align);
     width: var(--panel__width);
     text-align: var(--panel__text--align);
-    gap: var(--panel__gap);
   }
 
   .btn__wrapper {
@@ -867,7 +867,7 @@ button[class$="--tertiary"] {
 [card][size=sm] {
   --card__title--size: 0.9rem;
   --card__subtitle--size: 0.75rem;
-  --card__padding: .75rem 1rem;
+  --card__padding: .75rem;
   --card__height: fit-content;
 }
 [card][size=lg] {
@@ -1150,19 +1150,16 @@ header div ~ i.fa-bars {
   box-shadow: var(--panel__shadow);
   padding: var(--panel__padding);
   border-radius: var(--panel__border--radius);
+  gap: var(--panel__gap);
   display: flex;
   flex-direction: var(--panel__direction);
   justify-content: var(--panel__justify);
   align-items: var(--panel__align);
-  gap: var(--panel__gap);
 }
 
 [panel]:first-child > img {
   --panel__img--size: 75%;
   --panel__img--radius: 0;
-}
-[panel]:not([type=rounded], [type=dark]) {
-  margin-bottom: 3rem;
 }
 [panel] .card__wrapper--inner {
   display: flex;
@@ -1293,6 +1290,20 @@ table td {
   padding: 12px;
 }
 
+footer {
+  padding: 1rem 6rem;
+  border-top: solid 1px var(--neutral);
+}
+footer small.footer__text--sm {
+  font-size: x-small;
+  line-height: 0.5rem;
+}
+
+@media screen and (max-width: 859px) {
+  footer {
+    padding: 1rem var(--panel__padding) !important;
+  }
+}
 @keyframes show {
   0% {
     opacity: 0;

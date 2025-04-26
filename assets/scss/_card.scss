@@ -43,7 +43,7 @@
     &[size=sm] {
         --card__title--size: 0.9rem;
         --card__subtitle--size: 0.75rem;
-        --card__padding: .75rem 1rem;
+        --card__padding: .75rem;
         --card__height: fit-content;
         @extend %baseCard;
     }

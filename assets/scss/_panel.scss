@@ -1,14 +1,13 @@
-%basePanel {
+%basePanel {    
     background-color: var(--panel__bg--color);
     box-shadow: var(--panel__shadow);
     padding: var(--panel__padding);
     border-radius: var(--panel__border--radius);
-
+    gap: var(--panel__gap);
     display: flex;
     flex-direction: var(--panel__direction);
     justify-content: var(--panel__justify);
     align-items: var(--panel__align);
-    gap: var(--panel__gap);
 }
 
 [panel] {
@@ -22,7 +21,7 @@
        } 
 
     &:not([type=rounded], [type=dark]) {
-        margin-bottom: 3rem;
+        // margin-bottom: 3rem;
     }
 
     .card__wrapper--inner {

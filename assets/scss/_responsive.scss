@@ -1,4 +1,4 @@
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 860px) {
 
     header {
         #ep__logo--responsive {
@@ -12,10 +12,13 @@
     }
     
     [panel] {
+        --page__body--padding: 6rem;
+
         --panel__padding: 4rem var(--page__body--padding);
         --panel__direction: row;
         --panel__justify: space-between;
         --panel__align: center;
+        --panel__gap: 1rem;
         
        &:first-child{
         > img {
@@ -62,6 +65,7 @@
             --panel__title--size: 48px;
             --panel__subtitle--size: 21px;
             --panel__lineHeight: 1.9rem;
+            --panel__gap: 2.5rem;
         }
         
         div.card__wrapper--inner {
@@ -76,12 +80,7 @@
             align-items: var(--panel__align);
             width: var(--panel__width);
             text-align: var(--panel__text--align);
-            gap: var(--panel__gap);
         }
-    }
-
-    [card] {
-        
     }
 
     // Buttons

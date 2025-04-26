@@ -3,32 +3,30 @@
     <head>
         <title>experienciaPaciente</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="./assets/fonts/inter.min.css">
         <link rel="stylesheet" href="./assets/icons/fontawesome.min.css">
         <script src="./assets/js/include.js"></script>
+        <base href="/">
     </head>
     <body onload="loadPanels()">
         <header include-html="componentes/header.html"></header>
-        <main>
-            <!-- qué -->
-            <div id="container">
-                
-            </div>
-            <!-- footer -->
-            <footer>
-                
-            </footer>
+        <main id="container">
             <!-- circulos -->
              <span class="circle--primary"></span>
              <span class="circle--secondary"></span>
-             <span class="circle--tertiary"></span>
-             <span class="circle--neutral"></span>
-             <span class="circle--primaryLighter"></span>
             <script src="./assets/js/loadPanels.js"></script>
             <script defer>
                 includeHTML();
             </script>
         </main>
+        <!-- footer -->
+        <footer>
+            <small class="footer__text--sm">
+                <!-- <b>Aviso Legal y Términos de Uso</b><br> -->
+                <b>experienciaPaciente</b> te brinda el poder de gestionar y controlar tus propios datos de salud, sin depender exclusivamente de sistemas tradicionales. No sustituye la atención médica, pero te posibilita acceder, registrar y compartir tu información de Salud.
+                </small>
+        </footer>
     </body>
 </html>
