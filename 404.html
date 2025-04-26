@@ -4,14 +4,15 @@
     <meta http-equiv="refresh" content="0; url=/portal-paciente/" />
   </head>
   <body>
-    <script>
-      var redirectTo = '/portal-paciente/';
-      var current = window.location.pathname.replace('/portal-paciente', '');
-      if (current) {
-        window.location.href = redirectTo + '#' + current;
-      } else {
-        window.location.href = redirectTo;
-      }
+    <script type="text/javascript">
+      // Obtenemos el path después de /portal-paciente
+      var path = window.location.pathname.replace('/portal-paciente', '');
+      
+      // Redirigimos agregando "#" para que Angular lo entienda
+      var newUrl = '/portal-paciente/#' + path;
+      
+      // Vamos a la nueva URL
+      window.location.replace(newUrl);
     </script>
   </body>
 </html>
