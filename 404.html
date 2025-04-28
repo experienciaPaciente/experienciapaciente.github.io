@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/portal-paciente/" />
+    <meta http-equiv="refresh" content="0; url=/portal/" />
   </head>
   <body>
     <script type="text/javascript">
-      // Obtenemos el path después de /portal-paciente
-      var path = window.location.pathname.replace('/portal-paciente', '');
-      
-      // Redirigimos agregando "#" para que Angular lo entienda
-      var newUrl = '/portal-paciente/#' + path;
-      
-      // Vamos a la nueva URL
-      window.location.replace(newUrl);
+      var path = window.location.pathname.replace('/portal', '');
+            var newUrl = '/portal/#' + path;
+            window.location.replace(newUrl);
     </script>
   </body>
 </html>

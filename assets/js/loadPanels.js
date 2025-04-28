@@ -2,7 +2,7 @@ const panels = [
     {
         id: 1,
         type: 'transparent',
-        title: 'Aquí comienza tu historia de salud',
+        title: `Aquí comienza tu<br><b>Historia de Salud</b>`,
         subtitle: `Iniciativa no gubernamental y sin fines de lucro que promueve la accesibilidad y descentralización de los datos de salud a través de herramientas digitales.`,
         img: './assets/img/ep__img--01.png',
         btnLink: 'Quiero mis datos de salud!',
