@@ -8,6 +8,27 @@
         <link rel="stylesheet" href="./assets/fonts/inter.min.css">
         <link rel="stylesheet" href="./assets/icons/fontawesome.min.css">
         <script src="./assets/js/include.js"></script>
+        <script>
+            // Check if we need to redirect
+            (function() {
+              const redirect = sessionStorage.redirect;
+              delete sessionStorage.redirect;
+              
+              if (redirect && redirect !== location.href) {
+                // Get the path after your base URL
+                const basePath = '/portal/';
+                const afterBase = redirect.split(basePath)[1];
+                
+                if (afterBase) {
+                  history.replaceState(null, null, basePath + '#/' + afterBase);
+                  // Let Angular handle the navigation after page loads
+                  setTimeout(() => {
+                    window.location.reload();
+                  }, 0);
+                }
+              }
+            })();
+          </script>
         <base href="/">
     </head>
     <body onload="loadPanels()">
@@ -26,7 +47,7 @@
             <small class="footer__text--sm">
                 <!-- <b>Aviso Legal y Términos de Uso</b><br> -->
                 <b>experienciaPaciente</b> te brinda el poder de gestionar y controlar tus propios datos de salud, sin depender exclusivamente de sistemas tradicionales. No sustituye la atención médica, pero te posibilita acceder, registrar y compartir tu información de Salud.
-                </small>
+            </small>
         </footer>
     </body>
 </html>
