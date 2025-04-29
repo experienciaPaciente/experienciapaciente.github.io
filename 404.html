@@ -37,64 +37,25 @@
 
     <script>
         (function() {
-            // Parse the current URL to determine the target path
+            // Get the current path and preserve it for the Angular app
             const currentPath = window.location.pathname;
-            const referrer = document.referrer;
             
-            // Define the Angular app base URL
+            // Define the main app URL
             const appBaseUrl = "https://experienciapaciente.org";
             
-            // Navigation mapping for specific routes
-            const routeMapping = {
-                "/portal/registrarse": "registrarse",
-                "/portal/ingresar": "ingresar"
-            };
-            
-            // Also check for routes without the /portal prefix
-            const shortRoutes = ["registrarse", "ingresar"];
-            
-            function redirect() {
-                // First check if we're on a known route
-                for (const [route, buttonId] of Object.entries(routeMapping)) {
-                    if (currentPath.endsWith(route)) {
-                        // Redirect to the main app and simulate button click
-                        window.location.href = appBaseUrl + "/?redirect=" + encodeURIComponent(route);
-                        return;
-                    }
-                }
-                
-                // Check for short routes without the /portal prefix
-                for (const route of shortRoutes) {
-                    if (currentPath.endsWith('/' + route) || currentPath === '/' + route) {
-                        window.location.href = appBaseUrl + "/?redirect=" + encodeURIComponent(route);
-                        return;
-                    }
-                }
-                
-                // Check if we have a referrer from one of our known routes
-                if (referrer) {
-                    for (const [route, buttonId] of Object.entries(routeMapping)) {
-                        if (referrer.includes(route)) {
-                            window.location.href = appBaseUrl + "/?redirect=" + encodeURIComponent(route);
-                            return;
-                        }
-                    }
-                    
-                    // Also check referrer for short routes
-                    for (const route of shortRoutes) {
-                        if (referrer.includes('/' + route)) {
-                            window.location.href = appBaseUrl + "/?redirect=" + encodeURIComponent(route);
-                            return;
-                        }
-                    }
-                }
-                
-                // Default fallback: redirect to the main app
-                window.location.href = appBaseUrl;
+            // Function to determine if this is a known Angular route
+            function isKnownRoute(path) {
+                const knownRoutes = ['/portal/registrarse', '/registrarse', '/portal/ingresar', '/ingresar'];
+                return knownRoutes.some(route => path.includes(route));
             }
             
-            // Execute the redirect
-            redirect();
+            // If it's a known route, redirect with the path in the URL parameter
+            if (isKnownRoute(currentPath)) {
+                window.location.href = appBaseUrl + "/?redirect=" + encodeURIComponent(currentPath);
+            } else {
+                // Otherwise, just go to the main app
+                window.location.href = appBaseUrl;
+            }
         })();
     </script>
 </body>
