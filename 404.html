@@ -50,6 +50,9 @@
                 "/portal/ingresar": "ingresar"
             };
             
+            // Also check for routes without the /portal prefix
+            const shortRoutes = ["registrarse", "ingresar"];
+            
             function redirect() {
                 // First check if we're on a known route
                 for (const [route, buttonId] of Object.entries(routeMapping)) {
@@ -60,10 +63,26 @@
                     }
                 }
                 
+                // Check for short routes without the /portal prefix
+                for (const route of shortRoutes) {
+                    if (currentPath.endsWith('/' + route) || currentPath === '/' + route) {
+                        window.location.href = appBaseUrl + "/?redirect=" + encodeURIComponent(route);
+                        return;
+                    }
+                }
+                
                 // Check if we have a referrer from one of our known routes
                 if (referrer) {
                     for (const [route, buttonId] of Object.entries(routeMapping)) {
                         if (referrer.includes(route)) {
+                            window.location.href = appBaseUrl + "/?redirect=" + encodeURIComponent(route);
+                            return;
+                        }
+                    }
+                    
+                    // Also check referrer for short routes
+                    for (const route of shortRoutes) {
+                        if (referrer.includes('/' + route)) {
                             window.location.href = appBaseUrl + "/?redirect=" + encodeURIComponent(route);
                             return;
                         }
