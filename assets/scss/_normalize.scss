@@ -380,18 +380,18 @@ a, ul, li {
 	padding: 0;
 
     &:hover {
-        color: var(--andes-color-blue-500);
+        color: var(--ep-color-blue-500);
         }
 
     &:visited {
-        color: var(--andes-color-blue-500);
+        color: var(--ep-color-blue-500);
         }
 
-	&.andes-typography--link {
+	&.ep-typography--link {
 		font-size: 14px;
 		line-height: 18px;
 		font-weight: 400;
 		text-align: left;
-		color: var(--andes-color-blue-500);
+		color: var(--ep-color-blue-500);
 	}
 }

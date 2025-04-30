@@ -3,12 +3,12 @@ const panels = [
         id: 1,
         type: 'transparent',
         title: `Aquí comienza tu<br><b>Historia de Salud</b>`,
-        subtitle: `Iniciativa no gubernamental y sin fines de lucro que promueve la accesibilidad y descentralización de los datos de salud a través de herramientas digitales.`,
+        subtitle: `Iniciativa no gubernamental y sin fines de lucro que promueve la democratización del acceso a los datos de salud a través de herramientas digitales.`,
         img: './assets/img/ep__img--01.png',
         btnLink: 'Quiero mis datos de salud!',
-        btnLink2: 'Trabajo en un equipo de salud',
-        btnUrl: '',
-        btnUrl2: '',
+        btnLink2: 'Colaborar desde el círculo',
+        btnUrl: 'https://experienciapaciente.org/portal/',
+        btnUrl2: 'https://play.google.com/store/games?hl=en&pli=1',
         itemsType: 'list',
         items: []
     }
@@ -26,22 +26,33 @@ function getPanels(panel) {
                     ${panel.title ? `<h3 class="panel__title">${panel.title}</h3>` : ''}
                     ${panel.subtitle ? `<p class="panel__subtitle">${panel.subtitle}</p>` : ''}
                     <span class="btn__wrapper">
-                        ${panel.btnLink ? `<button class="btn__filled--primary">${panel.btnLink}</button>`: ''}
-                        ${panel.btnLink2 ? `<button class="btn__outline--secondary">${panel.btnLink2}</button>`: ''}   
+                        ${panel.btnLink ? `
+                             <a href="${panel.btnUrl}" target="_blank">
+                                <button class="btn__filled--primary">
+                           ${panel.btnLink}</button></a>`: ''}
+                        ${panel.btnLink2 ? `<a href="${panel.btnUrl2}" target="_blank">
+                                <button class="btn__outline--secondary">
+                            ${panel.btnLink2}</button></a>`: ''}   
+                    </span>
+                    <span class="wrapper--row">
+                        <a class="link__logo" href="https://medium.com/@pacientexperiencia/manifiesto-f1b67e3291d6" target="_blank">
+                            <img src="./assets/img/icon__medium.svg"width="30" height="30"/>
+                            <p>Manifiesto</p>
+                        </a>     
+                        <a class="link__logo" href="https://chng.it/bSP9S2VLt5" target="_blank">
+                            <img src="./assets/img/icon__change.svg" width="90" height="20"/>
+                        </a>
+                        <a class="link__logo" href="https://chromewebstore.google.com/category/extensions/productivity/tools?hl=es" target="_blank">
+                            <img src="./assets/img/icon__store.svg"/ width="30" height="30">
+                            <p>Chrome Store</p>
+                        </a>
+                        <a class="link__logo" href="https://github.com/experienciaPaciente/portal" target="_blank" >
+                            <img src="./assets/img/icon__github.svg"width="30" height="30"/>
+                            <p>GitHub</p>
+                        </a>           
+      
                     </span>
                 </span>
-                ${panel.items.length != 0 ? `<ul ${panel.itemsType}>
-                    ${panel.items.map(item => `
-                    <li card type="default" size="sm" direction="${item.direction}">
-                        ${item.icon ? `<i class="fa-solid fa-${item.icon}"></i>` : ''}
-                        ${item.imgUrl ? `<img src="${item.imgUrl}">` : ''}
-                        <span class="title__wrapper--row">
-                            ${item.title ? `<h4 class="card__title">${item.title}</h4>` : ''}
-                            ${item.subtitle ? `<p class="card__subtitle">${item.subtitle}</p>` : ''}
-                        </span>
-                    </li>
-                    `).join('')}
-                </ul>`: ''}
             </div>
         </section>
     `

@@ -18,7 +18,7 @@
     font: inherit;
 
 
-    .andes-accordion {
+    .ep-accordion {
         // padding: 24px;
         color: rgba(0, 0, 0, 0.9);
         font-weight: 400;
@@ -28,7 +28,7 @@
         border-bottom: 1px solid rgba(0, 0, 0, .1);
         border-radius: 6px;
 
-        &.andes-accordion--medium {
+        &.ep-accordion--medium {
             font-size: 16px;
             line-height: 20px;
             min-height: 48px;
@@ -37,7 +37,7 @@
             margin-bottom: var(--cardPadding);
         } 
 
-        .andes-accordion-header {
+        .ep-accordion-header {
             // width: 100%;
             cursor: pointer;
             padding: var(--cardPadding) var(--cardPadding) 16px var(--cardPadding);
@@ -60,7 +60,7 @@
             }
         }
 
-        .andes-accordion-panel-transition {
+        .ep-accordion-panel-transition {
             display: grid;
             grid-template-rows: 1fr;
             transition: grid-template-rows 300ms ease-in-out;

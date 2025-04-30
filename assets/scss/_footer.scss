@@ -1,6 +1,8 @@
 footer {
     padding: 1rem 6rem;
+    background-color: white;
     border-top: solid 1px var(--neutral);
+    z-index: 1;
 
     small {
         &.footer__text--sm {

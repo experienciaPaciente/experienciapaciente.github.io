@@ -337,17 +337,17 @@ a, ul, li {
   padding: 0;
 }
 a:hover, ul:hover, li:hover {
-  color: var(--andes-color-blue-500);
+  color: var(--ep-color-blue-500);
 }
 a:visited, ul:visited, li:visited {
-  color: var(--andes-color-blue-500);
+  color: var(--ep-color-blue-500);
 }
-a.andes-typography--link, ul.andes-typography--link, li.andes-typography--link {
+a.ep-typography--link, ul.ep-typography--link, li.ep-typography--link {
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
   text-align: left;
-  color: var(--andes-color-blue-500);
+  color: var(--ep-color-blue-500);
 }
 
 :root {
@@ -364,6 +364,7 @@ a.andes-typography--link, ul.andes-typography--link, li.andes-typography--link {
   --tertiaryLighter: #E6E6FA;
   --shadow: rgba(140, 140, 140, 0.5);
   --gradient: linear-gradient(to top right, #317aa0, #0abebb, #87d1b6);
+  --ep-color-blue-500: var(var(--secondary));
   --info: teal;
   --info--light: #c9f0ff;
   --warning: #ff9a00;
@@ -624,6 +625,36 @@ main {
   height: 100%;
 }
 
+.wrapper--row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  width: 100%;
+  align-self: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.wrapper--row .link__logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  opacity: 0.5;
+  gap: 0.5rem;
+  filter: grayscale(1);
+}
+.wrapper--row .link__logo:hover {
+  opacity: 1;
+}
+.wrapper--row .link__logo p {
+  font-size: 14px;
+  text-align: left;
+}
+
+@media screen and (max-width: 859px) {
+  .wrapper--row .link__logo {
+    justify-content: center;
+  }
+}
 img.cover {
   object-fit: cover;
 }
@@ -736,7 +767,7 @@ img.circle {
   background-color: rgba(0, 0, 0, 0);
   font: inherit;
 }
-.theme-ml .andes-accordion {
+.theme-ml .ep-accordion {
   color: rgba(0, 0, 0, 0.9);
   font-weight: 400;
   height: auto;
@@ -745,7 +776,7 @@ img.circle {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
 }
-.theme-ml .andes-accordion.andes-accordion--medium {
+.theme-ml .ep-accordion.ep-accordion--medium {
   font-size: 16px;
   line-height: 20px;
   min-height: 48px;
@@ -753,22 +784,22 @@ img.circle {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 2px 0px;
   margin-bottom: var(--cardPadding);
 }
-.theme-ml .andes-accordion .andes-accordion-header {
+.theme-ml .ep-accordion .ep-accordion-header {
   cursor: pointer;
   padding: var(--cardPadding) var(--cardPadding) 16px var(--cardPadding);
   font-size: 20px;
   line-height: 25px;
 }
-.theme-ml .andes-accordion .andes-accordion-header-container__title {
+.theme-ml .ep-accordion .ep-accordion-header-container__title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.theme-ml .andes-accordion .andes-accordion-header:hover {
+.theme-ml .ep-accordion .ep-accordion-header:hover {
   background: #efefef;
 }
-.theme-ml .andes-accordion .andes-accordion-panel-transition {
+.theme-ml .ep-accordion .ep-accordion-panel-transition {
   display: grid;
   grid-template-rows: 1fr;
   transition: grid-template-rows 300ms ease-in-out;
@@ -789,6 +820,7 @@ button {
   font-size: var(--button__font--size);
   color: var(--button__text--color);
   text-align: center;
+  position: relative;
   border-radius: var(--button__border--radius);
 }
 
@@ -806,6 +838,10 @@ button:active {
 }
 button i {
   font-size: var(--button__font--size);
+}
+button > a {
+  width: 100%;
+  height: 100%;
 }
 button[size=sm] {
   --button__padding: .35rem .65rem;
@@ -1124,7 +1160,7 @@ header {
   background: var(--header__bg--color);
   box-sizing: border-box;
 }
-@media screen and (max-width: 979px) {
+@media screen and (max-width: 859px) {
   header {
     --page__body--padding: 2rem;
   }
@@ -1207,7 +1243,7 @@ header div ~ i.fa-bars {
   --panel__subtitle--size: 10px;
   text-transform: uppercase;
   font-size: var(--panel__subtitle--size);
-  color: var(--primary);
+  color: var(--secondary);
   display: flex;
   align-items: center;
 }
@@ -1218,8 +1254,8 @@ header div ~ i.fa-bars {
   height: calc(var(--panel__subtitle--size) * 3);
   width: calc(var(--panel__subtitle--size) * 3);
   border-radius: 50%;
-  background-color: var(--secondaryLight);
-  color: var(--secondary);
+  background-color: var(--secondary);
+  color: white;
   font-weight: bolder;
   display: inline-flex;
   align-items: center;
@@ -1292,7 +1328,9 @@ table td {
 
 footer {
   padding: 1rem 6rem;
+  background-color: white;
   border-top: solid 1px var(--neutral);
+  z-index: 1;
 }
 footer small.footer__text--sm {
   font-size: x-small;
