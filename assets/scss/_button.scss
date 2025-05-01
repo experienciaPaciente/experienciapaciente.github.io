@@ -14,8 +14,9 @@
     color: var(--button__text--color);
     text-align: center;
     position: relative;
-    // border: none;
-    border-radius: var(--button__border--radius)
+    border: solid 2px var(--primary);
+    border-radius: var(--button__border--radius);
+    text-wrap: nowrap;
 }
 
 button {
@@ -59,13 +60,15 @@ button {
     
     &[class*=__outline] {
         --button__border--color: var(--button__text--color);
-        background: none;
+        background: none!important;
         border: solid 2px var(--button__border--color);
     }
     
     &[class*=__link] {
+        --button__text--color: var(--primary)!important;
         background: none;
         border: none;
+        text-decoration: underline;
     }
     
     &[class$=--primary] {

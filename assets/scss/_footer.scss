@@ -3,6 +3,7 @@ footer {
     background-color: white;
     border-top: solid 1px var(--neutral);
     z-index: 1;
+    position: relative;
 
     small {
         &.footer__text--sm {

@@ -434,6 +434,7 @@ a.ep-typography--link, ul.ep-typography--link, li.ep-typography--link {
   --panel__prefix--size: 0.75rem;
   --panel__prefix--color: var(--primaryLight);
   --panel__prefix--weight: normal;
+  --circle__border--weight: 2px;
   --panel__subfix--size: 0.9rem;
   --panel__subfix--color: gray;
   --panel__subfix--weight: normal;
@@ -548,6 +549,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   height: 100vh;
   background-color: var(--page__body--bg);
   position: relative;
@@ -622,16 +624,16 @@ body .circle--primaryLighter {
 }
 
 main {
-  height: 100%;
+  height: fit-content;
 }
 
 .wrapper--row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   width: 100%;
   align-self: center;
   gap: 2rem;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
 }
 .wrapper--row .link__logo {
   display: flex;
@@ -698,6 +700,7 @@ img.circle {
   }
   [panel] .panel__prefix .prefix__circle {
     --panel__subtitle--size: 11.5px!important;
+    --circle__border--weight: 3px!important;
     font-size: var(--panel__subtitle--size);
   }
   [panel]:not(:first-child) .panel__title {
@@ -821,7 +824,9 @@ button {
   color: var(--button__text--color);
   text-align: center;
   position: relative;
+  border: solid 2px var(--primary);
   border-radius: var(--button__border--radius);
+  text-wrap: nowrap;
 }
 
 button {
@@ -849,12 +854,14 @@ button[size=sm] {
 }
 button[class*=__outline] {
   --button__border--color: var(--button__text--color);
-  background: none;
+  background: none !important;
   border: solid 2px var(--button__border--color);
 }
 button[class*=__link] {
+  --button__text--color: var(--primary)!important;
   background: none;
   border: none;
+  text-decoration: underline;
 }
 button[class$="--primary"] {
   --button__text--color: white;
@@ -1243,7 +1250,7 @@ header div ~ i.fa-bars {
   --panel__subtitle--size: 10px;
   text-transform: uppercase;
   font-size: var(--panel__subtitle--size);
-  color: var(--secondary);
+  color: var(--primary);
   display: flex;
   align-items: center;
 }
@@ -1254,8 +1261,8 @@ header div ~ i.fa-bars {
   height: calc(var(--panel__subtitle--size) * 3);
   width: calc(var(--panel__subtitle--size) * 3);
   border-radius: 50%;
-  background-color: var(--secondary);
-  color: white;
+  border: solid var(--circle__border--weight) var(--secondary);
+  color: var(--secondary);
   font-weight: bolder;
   display: inline-flex;
   align-items: center;
@@ -1331,6 +1338,7 @@ footer {
   background-color: white;
   border-top: solid 1px var(--neutral);
   z-index: 1;
+  position: relative;
 }
 footer small.footer__text--sm {
   font-size: x-small;

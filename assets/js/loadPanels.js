@@ -6,9 +6,9 @@ const panels = [
         subtitle: `Iniciativa no gubernamental y sin fines de lucro que promueve la democratización del acceso a los datos de salud a través de herramientas digitales.`,
         img: './assets/img/ep__img--01.png',
         btnLink: 'Quiero mis datos de salud!',
-        btnLink2: 'Colaborar desde el círculo',
+        btnLink2: 'Quiero colaborar!',
         btnUrl: 'https://experienciapaciente.org/portal/',
-        btnUrl2: 'https://play.google.com/store/games?hl=en&pli=1',
+        btnUrl2: 'https://forms.gle/5BT2yBQnGfno978j9',
         itemsType: 'list',
         items: []
     }
@@ -31,8 +31,8 @@ function getPanels(panel) {
                                 <button class="btn__filled--primary">
                            ${panel.btnLink}</button></a>`: ''}
                         ${panel.btnLink2 ? `<a href="${panel.btnUrl2}" target="_blank">
-                                <button class="btn__outline--secondary">
-                            ${panel.btnLink2}</button></a>`: ''}   
+                                <button class="btn__outline--tertiary">
+                            ${panel.btnLink2}</button></a>`: ''}    
                     </span>
                     <span class="wrapper--row">
                         <a class="link__logo" href="https://medium.com/@pacientexperiencia/manifiesto-f1b67e3291d6" target="_blank">
@@ -50,7 +50,10 @@ function getPanels(panel) {
                             <img src="./assets/img/icon__github.svg"width="30" height="30"/>
                             <p>GitHub</p>
                         </a>           
-      
+                        <a class="link__logo" href="https://open.spotify.com/show/6lyoyR2IBlEg72WU9Cdk7d" target="_blank" >
+                            <img src="./assets/img/icon__spotify.svg"width="30" height="30"/>
+                            <p>Spotify</p>
+                        </a>           
                     </span>
                 </span>
             </div>

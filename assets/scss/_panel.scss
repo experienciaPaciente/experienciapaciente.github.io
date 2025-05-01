@@ -93,7 +93,7 @@
         --panel__subtitle--size: 10px;
         text-transform: uppercase;
         font-size: var(--panel__subtitle--size);
-        color: var(--secondary);
+        color: var(--primary);
         display: flex;
         align-items: center;
         
@@ -104,8 +104,8 @@
             height: calc(var(--panel__subtitle--size) * 3);
             width: calc(var(--panel__subtitle--size) * 3);
             border-radius: 50%;
-            background-color: var(--secondary); 
-            color: white;
+            border: solid var(--circle__border--weight) var(--secondary);
+            color: var(--secondary);
             font-weight: bolder;
             display: inline-flex;
             align-items: center;
