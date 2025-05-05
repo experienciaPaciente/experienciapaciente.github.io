@@ -39,20 +39,16 @@ function getPanels(panel) {
                             <img src="./assets/img/icon__medium.svg"width="30" height="30"/>
                             <p>Manifiesto</p>
                         </a>     
+                        <a class="link__logo" href="https://open.spotify.com/show/6lyoyR2IBlEg72WU9Cdk7d" target="_blank" >
+                            <img src="./assets/img/icon__spotify.svg"width="30" height="30"/>
+                            <p>Spotify</p>
+                        </a>           
                         <a class="link__logo" href="https://chng.it/bSP9S2VLt5" target="_blank">
                             <img src="./assets/img/icon__change.svg" width="90" height="20"/>
-                        </a>
-                        <a class="link__logo" href="https://chromewebstore.google.com/category/extensions/productivity/tools?hl=es" target="_blank">
-                            <img src="./assets/img/icon__store.svg"/ width="30" height="30">
-                            <p>Chrome Store</p>
                         </a>
                         <a class="link__logo" href="https://github.com/experienciaPaciente/portal" target="_blank" >
                             <img src="./assets/img/icon__github.svg"width="30" height="30"/>
                             <p>GitHub</p>
-                        </a>           
-                        <a class="link__logo" href="https://open.spotify.com/show/6lyoyR2IBlEg72WU9Cdk7d" target="_blank" >
-                            <img src="./assets/img/icon__spotify.svg"width="30" height="30"/>
-                            <p>Spotify</p>
                         </a>           
                     </span>
                 </span>

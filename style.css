@@ -1339,15 +1339,21 @@ footer {
   border-top: solid 1px var(--neutral);
   z-index: 1;
   position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
 }
 footer small.footer__text--sm {
   font-size: x-small;
-  line-height: 0.5rem;
+  line-height: 0.9rem;
 }
 
 @media screen and (max-width: 859px) {
   footer {
     padding: 1rem var(--panel__padding) !important;
+    justify-content: center;
+    text-align: center;
   }
 }
 @keyframes show {
