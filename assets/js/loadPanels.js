@@ -35,7 +35,7 @@ function getPanels(panel) {
                             ${panel.btnLink2}</button></a>`: ''}    
                     </span>
                     <span class="wrapper--row">
-                        <a class="link__logo" href="https://medium.com/@pacientexperiencia/manifiesto-f1b67e3291d6" target="_blank">
+                        <a class="link__logo" href="https://medium.com/@pacientexperiencia/fuera-del-c%C3%ADrculo-f1b67e3291d6" target="_blank">
                             <img src="./assets/img/icon__medium.svg"width="30" height="30"/>
                             <p>Manifiesto</p>
                         </a>     
