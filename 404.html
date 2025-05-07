@@ -30,33 +30,53 @@
             color: #333;
         }
     </style>
+    <script>
+        (function() {
+            // Store the original URL for potential use in the Angular app
+            sessionStorage.redirect = location.href;
+            
+            // Get the current path
+            const currentPath = window.location.pathname;
+            
+            // Define known routes for your app
+            const knownRoutes = [
+                '/portal/item/', 
+                '/portal/registrar', 
+                '/portal/scan', 
+                '/portal/registros', 
+                '/portal/actualizar/',
+                '/portal/auth/sign-up',
+                '/portal/auth/sign-in'
+            ];
+            
+            // Define the base URL and default routes
+            const baseUrl = '/portal/';
+            const defaultRoute = 'registrarse'; // Default route
+            const fallbackRoute = 'ingresar';   // Fallback for unmatched URLs
+            
+            // Function to check if the current path matches any known routes
+            function isKnownRoute() {
+                return knownRoutes.some(route => currentPath.startsWith(route));
+            }
+            
+            // If the path is the base path or a known route, go to the default route
+            if (currentPath === '/portal/' || currentPath === '/portal') {
+                window.location.href = baseUrl + defaultRoute;
+            } 
+            // If it matches a known route pattern, use hash navigation
+            else if (isKnownRoute()) {
+                // Use hash-based routing for known routes
+                window.location.href = baseUrl + '#' + currentPath.replace('/portal', '');
+            }
+            // For unknown routes, go to the login page
+            else {
+                window.location.href = baseUrl + fallbackRoute;
+            }
+        })();
+    </script>
 </head>
 <body>
     <div class="loading"></div>
     <div class="message">Redireccionando, por favor espere...</div>
-
-<!--     <script>
-        (function() {
-            // Get the current path and preserve it for the Angular app
-            const currentPath = window.location.pathname;
-            
-            // Define the main app URL
-            const appBaseUrl = "https://experienciapaciente.org";
-            
-            // Function to determine if this is a known Angular route
-            function isKnownRoute(path) {
-                const knownRoutes = ['/portal/registrarse', '/registrarse', '/portal/ingresar', '/ingresar'];
-                return knownRoutes.some(route => path.includes(route));
-            }
-            
-            // If it's a known route, redirect with the path in the URL parameter
-            if (isKnownRoute(currentPath)) {
-                window.location.href = appBaseUrl + "/?redirect=" + encodeURIComponent(currentPath);
-            } else {
-                // Otherwise, just go to the main app
-                window.location.href = appBaseUrl;
-            }
-        })();
-    </script> -->
 </body>
 </html>
