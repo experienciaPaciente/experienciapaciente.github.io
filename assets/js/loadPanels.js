@@ -46,7 +46,7 @@ function getPanels(panel) {
                         <a class="link__logo" href="https://chng.it/bSP9S2VLt5" target="_blank">
                             <img src="./assets/img/icon__change.svg" width="90" height="20"/>
                         </a>
-                        <a class="link__logo" href="https://github.com/experienciaPaciente/portal" target="_blank" >
+                        <a class="link__logo" href="https://github.com/experienciaPaciente" target="_blank" >
                             <img src="./assets/img/icon__github.svg"width="30" height="30"/>
                             <p>GitHub</p>
                         </a>           
