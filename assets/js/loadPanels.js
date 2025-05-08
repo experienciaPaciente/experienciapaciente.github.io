@@ -37,18 +37,18 @@ function getPanels(panel) {
                     <span class="wrapper--row">
                         <a class="link__logo" href="https://medium.com/@pacientexperiencia/fuera-del-c%C3%ADrculo-f1b67e3291d6" target="_blank">
                             <img src="./assets/img/icon__medium.svg"width="30" height="30"/>
-                            <p>Manifiesto</p>
+                            <p>Leer el manifiesto</p>
                         </a>     
                         <a class="link__logo" href="https://open.spotify.com/show/6lyoyR2IBlEg72WU9Cdk7d" target="_blank" >
                             <img src="./assets/img/icon__spotify.svg"width="30" height="30"/>
-                            <p>Spotify</p>
+                            <p>Escuchar el podcast</p>
                         </a>           
                         <a class="link__logo" href="https://chng.it/bSP9S2VLt5" target="_blank">
                             <img src="./assets/img/icon__change.svg" width="90" height="20"/>
                         </a>
                         <a class="link__logo" href="https://github.com/experienciaPaciente" target="_blank" >
                             <img src="./assets/img/icon__github.svg"width="30" height="30"/>
-                            <p>GitHub</p>
+                            <p>Conocer el código</p>
                         </a>           
                     </span>
                 </span>
