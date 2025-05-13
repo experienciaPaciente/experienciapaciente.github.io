@@ -10,6 +10,9 @@ header {
     width: 100vw;
     background: var(--header__bg--color);
     box-sizing: border-box;
+    // position: fixed;
+    // background-color: white;
+    // z-index: 1;
     
     @media screen and (max-width: 859px) {
         --page__body--padding: 2rem;
@@ -24,7 +27,6 @@ header {
         flex-direction: row;
         align-items: center;
         gap: var(--header__gap--horizontal);
-        // width: fit-content;
 
         i {
             font-size: var(--icon--size);

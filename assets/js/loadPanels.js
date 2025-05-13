@@ -2,6 +2,7 @@ const panels = [
     {
         id: 1,
         type: 'transparent',
+        prefix: true,
         title: `Aquí comienza tu<br><b>Historia de Salud</b>`,
         subtitle: `Iniciativa colaborativa, no gubernamental y sin fines de lucro que promueve la democratización del acceso a los datos digitales de salud.`,
         img: './assets/img/ep__img--01.png',
@@ -10,7 +11,46 @@ const panels = [
         btnUrl: 'https://experienciapaciente.org/portal/',
         btnUrl2: 'https://forms.gle/5BT2yBQnGfno978j9',
         itemsType: 'list',
+        footer: true,
         items: []
+    },
+    {
+        id: 2,
+        type: 'dark',
+        prefix: false,
+        title: 'Conocé las iniciativas de experiencia<b>Paciente</b>',
+        subtitle: `Descubrí cómo transformamos cada contacto en salud en una vivencia más humana, clara y cuidada. Estas iniciativas reflejan nuestra filosofía centrada en la experiencia del paciente.`,
+        img: '',
+        // btnLink: 'Quiero mis datos de salud!',
+        // btnLink2: 'Quiero colaborar!',
+        // btnUrl: 'https://experienciapaciente.org/portal/',
+        // btnUrl2: 'https://forms.gle/5BT2yBQnGfno978j9',
+        itemsType: 'list',
+        footer: false,
+        items: [
+            {
+                id: 1,
+                title: 'Democratizar el acceso a los datos de salud',
+                subtitle: 'Esta iniciativa parte de la premisa de que los datos de salud de las personas se encuentran encerrados en circuitos restringidos y arbitrariamente delimitados.',
+                icon: '',
+                imgUrl: './../assets/img/ep__img--huds.png',
+                direction: 'row',
+                category: 'Comunicación',
+                buttonLabel: 'Conocer más',
+                buttonUrl: 'https://medium.com/@pacientexperiencia/fuera-del-c%C3%ADrculo-f1b67e3291d6'
+            },
+            {
+                id: 2,
+                title: 'El entorno físico también cuida',
+                subtitle: 'Accesibilidad, funcionalidad, señalización e higiene influyen directamente en el paciente. Un espacio bien diseñado es una capa activa en la experiencia.',
+                icon: '',
+                imgUrl: './../assets/img/ep__img--infra.png',
+                direction: 'row',
+                category: 'Entorno',
+                buttonLabel: 'Conocer más',
+                buttonUrl: 'https://medium.com/@pacientexperiencia/fuera-del-c%C3%ADrculo-f1b67e3291d6'
+            }
+        ]
     }
 ] 
 
@@ -20,9 +60,9 @@ function getPanels(panel) {
             ${panel.img ? `<img src="${panel.img}" alt="${panel.img}">` : ''}
             <div class="card__wrapper--inner">
                 <span class="card__wrapper--inner">
-                    <div class="panel__prefix">
+                    ${panel.prefix === true ? `<div class="panel__prefix">
                         Fuera del<span class="prefix__circle">Circulo</span>
-                    </div>
+                    </div>`: ''}
                     ${panel.title ? `<h3 class="panel__title">${panel.title}</h3>` : ''}
                     ${panel.subtitle ? `<p class="panel__subtitle">${panel.subtitle}</p>` : ''}
                     <span class="btn__wrapper">
@@ -34,7 +74,26 @@ function getPanels(panel) {
                                 <button class="btn__outline--tertiary">
                             ${panel.btnLink2}</button></a>`: ''}    
                     </span>
-                    <span class="wrapper--row">
+                    ${panel.items.length != 0 ? 
+                    `<ul ${panel.itemsType}>
+                        ${panel.items.map(item => `
+                        <li card type="default" direction="${item.direction}">
+                            ${item.icon ? `<i class="fa-solid fa-${item.icon}"></i>` : ''}
+                            ${item.imgUrl ? `<img src="${item.imgUrl}">` : ''}
+                            <div class="title__wrapper--row">
+                                <span class="badge__wrapper">
+                                    <p>${item.category}</p>
+                                </span>
+                                ${item.title ? `<h4 class="card__title">${item.title}</h4>` : ''}
+                                ${item.subtitle ? `<p class="card__subtitle">${item.subtitle}</p>` : ''}
+                                ${item.buttonLabel ? `<a href="${item.buttonUrl}" target="_blank"><button class="btn__outline--tertiary">
+                                ${item.buttonLabel}</button></a>` : ''}
+                            </div>
+                        </li>
+                        `).join('')}
+                    </ul>`: ''}
+                    ${panel.footer === true ?
+                   `<span class="wrapper--row">
                         <a class="link__logo" href="https://medium.com/@pacientexperiencia/fuera-del-c%C3%ADrculo-f1b67e3291d6" target="_blank">
                             <img src="./assets/img/icon__medium.svg"width="30" height="30"/>
                             <p>Leer el manifiesto</p>
@@ -50,7 +109,8 @@ function getPanels(panel) {
                             <img src="./assets/img/icon__github.svg"width="30" height="30"/>
                             <p>Conocer el código</p>
                         </a>           
-                    </span>
+                    </span>`
+                    :''}
                 </span>
             </div>
         </section>

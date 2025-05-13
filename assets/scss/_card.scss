@@ -2,29 +2,38 @@
     display: flex;
     flex-direction: var(--card__direction);
     justify-content: start;
-    align-items: center;
+    align-items: var(--card__align);
     background-color: var(--card__bg--color);
     box-shadow: var(--card__shadow);
     padding: var(--card__padding);
     gap: var(--card__gap);
     text-align: var(--card__text--align);
     border-radius: var(--card__border--radius);
-    // height: var(--card__height);
-    // max-height: 180px;
+    box-shadow: var(--shadow);
 }
 
 [list] {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: var(--card__gap);
     width: 100%;
 }
 
 [card] {
     @extend %baseCard;
+    --card__align: center;
+
             
     &[type=default] {
+        --card__text--align: center;
+        --card__padding: 2rem;
         --card__bg--color: white;
+        --card__gap: 16px;
+        
+        gap: var(--card__gap);
+        border-radius: 20px;
+        width: fit-content;
         @extend %baseCard;
     }
 
@@ -48,15 +57,23 @@
         @extend %baseCard;
     }
 
+    &[size=md] {
+        --card__title--size: 1.2rem;
+        --card__subtitle--size: 1rem;
+        --card__padding: 1rem;
+        --card__height: fit-content;
+        @extend %baseCard;
+    }
+
     &[size=lg] {
         --card__title--size: 1.7rem;
-        --card__subtitle--size: 1rem;
+        --card__subtitle--size: 1.2rem;
         @extend %baseCard;
     }
 
     &[direction=row] {
-        --card__direction: row;
-        --card__text--align: left;
+        // flex-wrap: wrap;
+        flex-direction: column;
         @extend %baseCard;
     }
 
@@ -68,11 +85,14 @@
 
     .title__wrapper--row {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--card__gap);
     }
 
     > img {
-        width: var(--card__img--size);
-        height: 96px;
+        // width: var(--card__img--size);
+        height: 180px;
     }
 
     > i {
@@ -82,15 +102,20 @@
     }
 
     .card__title {
-        --card__lineHeight: 1.5rem;
-        color: var(--card__title--color);
+        --card__title--size: 16px;
+        --card__lineHeight: 24px;
+        color: var(--primary);
         font-size: var(--card__title--size);
         line-height: var(--card__lineHeight);
     }
-    
+
     .card__subtitle {
-        color: var(--card__subtitle--color);
+        --card__subtitle--size: 12px;
+        --card__lineHeight: 18px;
+        --card__subtitle--weight: 400;
+        color: var(--lightNeutral);
         font-size: var(--card__subtitle--size);
+        font-weight: var(--card__subtitle--weight);
         line-height: var(--card__lineHeight);
     }
 }

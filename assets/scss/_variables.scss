@@ -4,13 +4,14 @@
   --secondary: #6CBCFC;
   --tertiary: #F5C451;
   --neutral: #363636;
+  --lightNeutral: #7D7987;
   --primaryLight: #ECF5FF;
   --primaryLighter: #D7F6FF;
   --secondaryLight: #C7E2FF;
   --secondaryLighter: #ECF5FF;
   --tertiaryLight: #FFF4E3;
   --tertiaryLighter: #E6E6FA;
-  --shadow: rgba(140, 140, 140, 0.5);
+  --shadow: 0px 0px 4px 2px rgba(111, 111, 111, 0.2);
   --gradient: linear-gradient(to top right, #317aa0, #0abebb, #87d1b6);
   --ep-color-blue-500: var(var(--secondary));
 
@@ -106,10 +107,11 @@
   --panel__padding: 2rem;
   --panel__shadow: 2px 2px 4px 0px rgba(180, 180, 180, 0.5);
   --panel__width: 100%;
-  --panel__height: 25%;
+  --panel__height: fit-content;
   --panel__direction: column;
 
   /* Card */
+  --card__align: center;
   --card__border--radius: 6px;
   --card__bg--color: white;
   --card__img--size: 100%;
@@ -173,7 +175,7 @@
   --icon--size: 1rem;
 
   /* Footer */
-  --footer__height: 120px;
+  --footer__height: 48px;
   --footer__text--sm: x-small;
   --footer__text--color: gray;
   --footer__text--align: center;
