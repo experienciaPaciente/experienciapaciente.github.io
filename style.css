@@ -6,8 +6,8 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 /* Sections
@@ -424,8 +424,8 @@ a.ep-typography--link, ul.ep-typography--link, li.ep-typography--link {
   --panel__align: center;
   --panel__justify: space-between;
   --panel__text--align: center;
-  --panel__gap: 1rem;
-  --panel__title--size: 1.25rem;
+  --panel__gap: 1.25rem;
+  --panel__title--size: 1.35rem;
   --panel__title--color: var(--primary);
   --panel__title--weight: 500;
   --panel__subtitle--size: 0.85rem;
@@ -440,10 +440,9 @@ a.ep-typography--link, ul.ep-typography--link, li.ep-typography--link {
   --panel__subfix--color: gray;
   --panel__subfix--weight: normal;
   --panel__subfix--align: center;
-  --panel__padding: 2rem;
+  --panel__padding: 4rem;
   --panel__shadow: 2px 2px 4px 0px rgba(180, 180, 180, 0.5);
   --panel__width: 100%;
-  --panel__height: fit-content;
   --panel__direction: column;
   /* Card */
   --card__align: center;
@@ -458,7 +457,7 @@ a.ep-typography--link, ul.ep-typography--link, li.ep-typography--link {
   --card__subtitle--size: 1rem;
   --card__subtitle--color: var(--neutral);
   --card__subtitle--weight: light;
-  --card__lineHeight: 1rem;
+  --card__lineHeight: auto;
   --card__prefix--size: 0.75rem;
   --card__prefix--color: var(--primaryLight);
   --card__prefix--weight: normal;
@@ -627,6 +626,7 @@ body .circle--primaryLighter {
 
 main {
   height: fit-content;
+  width: 100vw;
 }
 
 .wrapper--row {
@@ -683,7 +683,6 @@ img.circle {
 
   [panel] {
     --page__body--padding: 6rem;
-    --panel__padding: 4rem var(--page__body--padding);
     --panel__direction: row;
     --panel__justify: space-between;
     --panel__align: center;
@@ -692,16 +691,20 @@ img.circle {
   [panel]:first-child > img {
     --panel__img--size: 50%!important;
     --panel__img--radius: 0;
+    height: 75% !important;
   }
   [panel][type=dark] {
     --panel__height: calc(100vh + var(--footer__height));
+    --panel__padding: var(--page__body--padding)!important;
   }
   [panel][type=dark] .panel__title, [panel][type=dark] .panel__subtitle {
     width: 65vw !important;
     align-self: center;
   }
   [panel][type=transparent]:nth-child(1) {
+    --panel__padding: 0 var(--page__body--padding)!important;
     --panel__direction: row-reverse;
+    --panel__gap: 2.5rem;
   }
   [panel] .panel__prefix {
     --panel__subtitle--size: 12px!important;
@@ -1037,7 +1040,6 @@ button[class$="--tertiary"] {
 }
 [card] .card__title {
   --card__title--size: 16px;
-  --card__lineHeight: 24px;
   color: var(--primary);
   font-size: var(--card__title--size);
   line-height: var(--card__lineHeight);
@@ -1302,11 +1304,14 @@ header div ~ i.fa-bars {
   justify-content: var(--panel__justify);
   align-items: var(--panel__align);
   height: var(--panel__height);
+  min-height: fit-content;
 }
 
 [panel]:first-child > img {
   --panel__img--size: 75%;
   --panel__img--radius: 0;
+  object-fit: contain !important;
+  height: 25%;
 }
 [panel] .card__wrapper--inner {
   display: flex;
@@ -1324,6 +1329,9 @@ header div ~ i.fa-bars {
 [panel][type=transparent] {
   --panel__bg--color: transparent;
   --panel__shadow: none;
+  --panel__justify: flex-start;
+  --panel__padding: 1rem 2rem;
+  --panel__height: calc(100vh - var(--header__height) - var(--footer__height));
 }
 [panel][type=rounded] {
   --panel__bg--color: var(--secondaryLighter);
@@ -1337,7 +1345,9 @@ header div ~ i.fa-bars {
   --panel__border--radius: 0;
   --panel__shadow: none;
   --panel__justify: center;
-  --footer__height: 84px;
+  --panel__height: fit-content;
+  --footer__height: 78px;
+  --panel__padding: 4rem 2rem;
 }
 [panel][type=dark] span.card__wrapper--inner {
   text-align: center;
@@ -1454,7 +1464,7 @@ table td {
 
 footer {
   padding: 1rem 6rem;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.85);
   border-top: solid 1px var(--neutral);
   z-index: 1;
   position: fixed;
@@ -1472,8 +1482,8 @@ footer small.footer__text--sm {
 
 @media screen and (max-width: 859px) {
   footer {
-    --footer__height: 84px;
-    padding: 1rem var(--panel__padding) !important;
+    --footer__height: 56px;
+    padding: 1rem;
     justify-content: center;
     text-align: center;
     height: var(--footer__height);

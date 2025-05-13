@@ -6,9 +6,9 @@ const panels = [
         title: `Aquí comienza tu<br><b>Historia de Salud</b>`,
         subtitle: `Iniciativa colaborativa, no gubernamental y sin fines de lucro que promueve la democratización del acceso a los datos digitales de salud.`,
         img: './assets/img/ep__img--01.png',
-        btnLink: 'Quiero mis datos de salud!',
+        btnLink: 'Conocé los proyectos',
         btnLink2: 'Quiero colaborar!',
-        btnUrl: 'https://experienciapaciente.org/portal/',
+        btnUrl: '#iniciativas',
         btnUrl2: 'https://forms.gle/5BT2yBQnGfno978j9',
         itemsType: 'list',
         footer: true,
@@ -18,8 +18,8 @@ const panels = [
         id: 2,
         type: 'dark',
         prefix: false,
-        title: 'Conocé las iniciativas de experiencia<b>Paciente</b>',
-        subtitle: `Descubrí cómo transformamos cada contacto en salud en una vivencia más humana, clara y cuidada. Estas iniciativas reflejan nuestra filosofía centrada en la experiencia del paciente.`,
+        title: 'Proyectos de experiencia<b>Paciente</b>',
+        subtitle: `Explorá los proyectos que hay detrás de la transformación concebida para mejorar cada aspecto que integra la experiencia del paciente.`,
         img: '',
         // btnLink: 'Quiero mis datos de salud!',
         // btnLink2: 'Quiero colaborar!',
@@ -31,7 +31,7 @@ const panels = [
             {
                 id: 1,
                 title: 'Democratizar el acceso a los datos de salud',
-                subtitle: 'Esta iniciativa parte de la premisa de que los datos de salud de las personas se encuentran encerrados en circuitos restringidos y arbitrariamente delimitados.',
+                subtitle: 'Desarrollamos un prototipo para facilitar el acceso e intercambio de información de salud. La experiencia del paciente implica ver, entender y disponer de sus propios datos.',
                 icon: '',
                 imgUrl: './../assets/img/ep__img--huds.png',
                 direction: 'row',
@@ -41,14 +41,14 @@ const panels = [
             },
             {
                 id: 2,
-                title: 'El entorno físico también cuida',
-                subtitle: 'Accesibilidad, funcionalidad, señalización e higiene influyen directamente en el paciente. Un espacio bien diseñado es una capa activa en la experiencia.',
+                title: 'Transformar el entorno es parte de la experiencia',
+                subtitle: 'Accesibilidad, equipamiento, señalización e higiene influyen directamente en las percepciones del paciente. Un espacio bien diseñado es una capa activa en la experiencia.',
                 icon: '',
                 imgUrl: './../assets/img/ep__img--infra.png',
                 direction: 'row',
                 category: 'Entorno',
                 buttonLabel: 'Conocer más',
-                buttonUrl: 'https://medium.com/@pacientexperiencia/fuera-del-c%C3%ADrculo-f1b67e3291d6'
+                buttonUrl: 'https://medium.com/@pacientexperiencia/el-espacio-físico-también-es-parte-de-la-experiencia-del-paciente-a4ec0cb34707'
             }
         ]
     }
@@ -56,7 +56,7 @@ const panels = [
 
 function getPanels(panel) {
     return `
-        <section panel type="${panel.type}" class="fade-in delay">
+        <section panel ${panel.btnLink ? '' : 'id="iniciativas"'} type="${panel.type}" class="fade-in delay">
             ${panel.img ? `<img src="${panel.img}" alt="${panel.img}">` : ''}
             <div class="card__wrapper--inner">
                 <span class="card__wrapper--inner">
@@ -65,15 +65,14 @@ function getPanels(panel) {
                     </div>`: ''}
                     ${panel.title ? `<h3 class="panel__title">${panel.title}</h3>` : ''}
                     ${panel.subtitle ? `<p class="panel__subtitle">${panel.subtitle}</p>` : ''}
-                    <span class="btn__wrapper">
-                        ${panel.btnLink ? `
-                             <a href="${panel.btnUrl}" target="_blank">
+                    ${panel.btnLink ? `<span class="btn__wrapper">
+                             <a href="${panel.btnUrl}">
                                 <button class="btn__filled--primary">
                            ${panel.btnLink}</button></a>`: ''}
                         ${panel.btnLink2 ? `<a href="${panel.btnUrl2}" target="_blank">
                                 <button class="btn__outline--tertiary">
-                            ${panel.btnLink2}</button></a>`: ''}    
-                    </span>
+                            ${panel.btnLink2}</button></a>   
+                    </span>` : ''}
                     ${panel.items.length != 0 ? 
                     `<ul ${panel.itemsType}>
                         ${panel.items.map(item => `

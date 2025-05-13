@@ -1,6 +1,6 @@
 footer {
     padding: 1rem 6rem;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.85);
     border-top: solid 1px var(--neutral);
     z-index: 1;
     position: fixed;
@@ -22,8 +22,8 @@ footer {
 
 @media screen and (max-width: 859px) { 
     footer {
-        --footer__height: 84px;
-        padding: 1rem var(--panel__padding)!important;
+        --footer__height: 56px;
+        padding: 1rem;
         justify-content: center;
         text-align: center;
         height: var(--footer__height);

@@ -14,7 +14,6 @@
     [panel] {
         --page__body--padding: 6rem;
 
-        --panel__padding: 4rem var(--page__body--padding);
         --panel__direction: row;
         --panel__justify: space-between;
         --panel__align: center;
@@ -24,11 +23,13 @@
         > img {
             --panel__img--size: 50%!important;
             --panel__img--radius: 0;
+            height: 75%!important;
         }
        } 
 
        &[type=dark] {
         --panel__height: calc(100vh + var(--footer__height));
+        --panel__padding: var(--page__body--padding)!important;
 
             .panel__title, .panel__subtitle {
                 width: 65vw!important;
@@ -37,7 +38,9 @@
        }
        
         &[type=transparent]:nth-child(1) {
+            --panel__padding: 0 var(--page__body--padding)!important;
             --panel__direction: row-reverse;
+            --panel__gap: 2.5rem;
         }
 
         .panel__prefix {
@@ -107,7 +110,6 @@
         }
  
         .card__title {
-            // --card__text--align: left!important;
             --card__title--size: 24px!important;            
             font-size: var(--card__title--size)!important;
             line-height: var(--card__lineHeight);

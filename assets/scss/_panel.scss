@@ -9,6 +9,7 @@
     justify-content: var(--panel__justify);
     align-items: var(--panel__align);
     height: var(--panel__height);
+    min-height: fit-content;
 }
 
 [panel] {
@@ -18,6 +19,8 @@
         > img {
             --panel__img--size: 75%;
             --panel__img--radius: 0;
+            object-fit: contain!important;
+            height: 25%;
         }
        } 
 
@@ -40,6 +43,10 @@
     &[type=transparent] {
         --panel__bg--color: transparent;
         --panel__shadow: none;
+        --panel__justify: flex-start;
+        --panel__padding: 1rem 2rem;
+        --panel__height: calc(100vh - var(--header__height) - var(--footer__height));
+
         @extend %basePanel;
     }
     
@@ -57,7 +64,10 @@
         --panel__border--radius: 0;
         --panel__shadow: none;
         --panel__justify: center;
-        --footer__height: 84px;
+        --panel__height: fit-content;
+        --footer__height: 78px;
+        --panel__padding: 4rem 2rem;
+
         
         @extend %basePanel;
 
