@@ -77,6 +77,14 @@ pre {
  */
 a {
   background-color: transparent;
+  text-decoration: underline;
+  color: var(--secondary);
+}
+a:hover {
+  color: var(--ep-color-blue-500);
+}
+a:visited {
+  color: var(--ep-color-blue-500);
 }
 
 /**
@@ -329,20 +337,20 @@ template {
   display: none;
 }
 
-a, ul, li {
+ul, li {
   text-decoration: none;
   color: inherit;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-a:hover, ul:hover, li:hover {
+ul:hover, li:hover {
   color: var(--ep-color-blue-500);
 }
-a:visited, ul:visited, li:visited {
+ul:visited, li:visited {
   color: var(--ep-color-blue-500);
 }
-a.ep-typography--link, ul.ep-typography--link, li.ep-typography--link {
+ul.ep-typography--link, li.ep-typography--link {
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
@@ -412,7 +420,7 @@ a.ep-typography--link, ul.ep-typography--link, li.ep-typography--link {
   --header__height: 75px;
   --header__bg--color: rgba(255, 255, 255, 0.5);
   --header__padding--vertical: 0.5rem;
-  --header__padding--horizontal: 2rem;
+  --header__padding--horizontal: var(--page__body--padding);
   --header__item-padding--vertical: 0;
   --header__item-padding--horizontal: 16px;
   --header__gap--horizontal: 12px;
@@ -492,7 +500,7 @@ a.ep-typography--link, ul.ep-typography--link, li.ep-typography--link {
   --badge__padding--vertical:
     0.75rem;
   --badge__padding--horizontal: 1rem;
-  --badge__font--size: 12px;
+  --badge__font--size: 10px;
   --badge__color--neutral: var(--neutral);
   --badge__background--color: rgba(255, 255, 255, 0.75);
   /* Icons */
@@ -624,6 +632,16 @@ body .circle--primaryLighter {
   right: 0;
 }
 
+.ep__logo--desktop {
+  display: none;
+}
+
+.ep__logo--responsive {
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+
 main {
   height: fit-content;
   width: 100vw;
@@ -636,6 +654,15 @@ main {
   align-self: center;
   gap: 2rem;
   margin-top: 1.5rem;
+}
+.wrapper--row > a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .wrapper--row .link__logo {
   display: flex;
@@ -673,12 +700,13 @@ img.circle {
 }
 
 @media screen and (min-width: 860px) {
-  header #ep__logo--responsive {
+  header .ep__logo--responsive, main .ep__logo--responsive {
     display: none;
   }
-  header #ep__logo--desktop {
+  header .ep__logo--desktop, main .ep__logo--desktop {
     display: block;
-    height: 100%;
+    width: 255px;
+    height: 43px;
   }
 
   [panel] {
@@ -702,7 +730,7 @@ img.circle {
     align-self: center;
   }
   [panel][type=transparent]:nth-child(1) {
-    --panel__padding: 0 var(--page__body--padding)!important;
+    --panel__padding: .5rem var(--page__body--padding) 4rem var(--page__body--padding)!important;
     --panel__direction: row-reverse;
     --panel__gap: 2.5rem;
   }
@@ -930,6 +958,11 @@ button i {
 button > a {
   width: 100%;
   height: 100%;
+  text-decoration: none;
+  color: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 button[size=sm] {
   --button__padding: .35rem .65rem;
@@ -1030,7 +1063,7 @@ button[class$="--tertiary"] {
   flex-direction: column;
   gap: var(--card__gap);
 }
-[card] > img {
+[card] > img.card__img {
   height: 180px;
 }
 [card] > i {
@@ -1261,7 +1294,7 @@ section p-inputswitch ~ label ~ textarea {
 }
 
 header {
-  --page__body--padding: 6rem;
+  --page__body--padding: 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1271,14 +1304,6 @@ header {
   width: 100vw;
   background: var(--header__bg--color);
   box-sizing: border-box;
-}
-@media screen and (max-width: 859px) {
-  header {
-    --page__body--padding: 2rem;
-  }
-  header #ep__logo--desktop {
-    display: none;
-  }
 }
 header div {
   display: flex;
@@ -1293,6 +1318,12 @@ header div ~ i.fa-bars {
   display: none;
 }
 
+@media screen and (min-width: 860px) {
+  header {
+    --page__body--padding: 6rem!important;
+    padding: 1rem var(--page__body--padding);
+  }
+}
 [panel][direction=horizontal], [panel][size=lg], [panel][size=sm], [panel][type=dark], [panel][type=rounded], [panel][type=transparent], [panel][type=default], [panel] {
   background-color: var(--panel__bg--color);
   box-shadow: var(--panel__shadow);
@@ -1330,7 +1361,7 @@ header div ~ i.fa-bars {
   --panel__bg--color: transparent;
   --panel__shadow: none;
   --panel__justify: flex-start;
-  --panel__padding: 1rem 2rem;
+  --panel__padding: 1rem 2rem 4rem 2rem;
   --panel__height: calc(100vh - var(--header__height) - var(--footer__height));
 }
 [panel][type=rounded] {
@@ -1345,7 +1376,7 @@ header div ~ i.fa-bars {
   --panel__border--radius: 0;
   --panel__shadow: none;
   --panel__justify: center;
-  --panel__height: fit-content;
+  --panel__height: calc(100vh - var(--footer__height) - var(--header__height));
   --footer__height: 78px;
   --panel__padding: 4rem 2rem;
 }
@@ -1482,7 +1513,7 @@ footer small.footer__text--sm {
 
 @media screen and (max-width: 859px) {
   footer {
-    --footer__height: 56px;
+    --footer__height: ;
     padding: 1rem;
     justify-content: center;
     text-align: center;

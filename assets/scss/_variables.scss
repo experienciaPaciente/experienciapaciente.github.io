@@ -69,7 +69,7 @@
   --header__height: 75px;
   --header__bg--color: rgba(255, 255, 255, 0.5);
   --header__padding--vertical: 0.5rem;
-  --header__padding--horizontal: 2rem;
+  --header__padding--horizontal: var(--page__body--padding);
   --header__item-padding--vertical: 0;
   --header__item-padding--horizontal: 16px;
   --header__gap--horizontal: 12px;
@@ -167,7 +167,7 @@
   --badge__padding--vertical:
     0.75rem;
   --badge__padding--horizontal: 1rem;
-  --badge__font--size: 12px;
+  --badge__font--size: 10px;
   --badge__color--neutral: var(--neutral);
   --badge__background--color: rgba(255, 255, 255, 0.75);
 

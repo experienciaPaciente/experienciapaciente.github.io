@@ -21,17 +21,13 @@ const panels = [
         title: 'Proyectos de experiencia<b>Paciente</b>',
         subtitle: `Explorá los proyectos que hay detrás de la transformación concebida para mejorar cada aspecto que integra la experiencia del paciente.`,
         img: '',
-        // btnLink: 'Quiero mis datos de salud!',
-        // btnLink2: 'Quiero colaborar!',
-        // btnUrl: 'https://experienciapaciente.org/portal/',
-        // btnUrl2: 'https://forms.gle/5BT2yBQnGfno978j9',
         itemsType: 'list',
         footer: false,
         items: [
             {
                 id: 1,
                 title: 'Democratizar el acceso a los datos de salud',
-                subtitle: 'Desarrollamos un prototipo para facilitar el acceso e intercambio de información de salud. La experiencia del paciente implica ver, entender y disponer de sus propios datos.',
+                subtitle: 'La experiencia del paciente incluye poder acceder, gestionar y disponer de sus propios datos de salud. <a href="https://experienciapaciente.org/portal/" target="_blank">Probar prototipo</a>.',
                 icon: '',
                 imgUrl: './../assets/img/ep__img--huds.png',
                 direction: 'row',
@@ -41,8 +37,8 @@ const panels = [
             },
             {
                 id: 2,
-                title: 'Transformar el entorno es parte de la experiencia',
-                subtitle: 'Accesibilidad, equipamiento, señalización e higiene influyen directamente en las percepciones del paciente. Un espacio bien diseñado es una capa activa en la experiencia.',
+                title: 'Proveer lineamientos para entornos de salud',
+                subtitle: 'El espacio es parte de la experiencia: la accesibilidad, higiene, señalización influyen directamente en la percepción del paciente.',
                 icon: '',
                 imgUrl: './../assets/img/ep__img--infra.png',
                 direction: 'row',
@@ -78,7 +74,7 @@ function getPanels(panel) {
                         ${panel.items.map(item => `
                         <li card type="default" direction="${item.direction}">
                             ${item.icon ? `<i class="fa-solid fa-${item.icon}"></i>` : ''}
-                            ${item.imgUrl ? `<img src="${item.imgUrl}">` : ''}
+                            ${item.imgUrl ? `<img class="card__img" src="${item.imgUrl}">` : ''}
                             <div class="title__wrapper--row">
                                 <span class="badge__wrapper">
                                     <p>${item.category}</p>

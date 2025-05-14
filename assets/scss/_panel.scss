@@ -44,7 +44,7 @@
         --panel__bg--color: transparent;
         --panel__shadow: none;
         --panel__justify: flex-start;
-        --panel__padding: 1rem 2rem;
+        --panel__padding: 1rem 2rem 4rem 2rem;
         --panel__height: calc(100vh - var(--header__height) - var(--footer__height));
 
         @extend %basePanel;
@@ -64,7 +64,7 @@
         --panel__border--radius: 0;
         --panel__shadow: none;
         --panel__justify: center;
-        --panel__height: fit-content;
+        --panel__height: calc(100vh - var(--footer__height) - var(--header__height));
         --footer__height: 78px;
         --panel__padding: 4rem 2rem;
 

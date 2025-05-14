@@ -90,8 +90,7 @@
         gap: var(--card__gap);
     }
 
-    > img {
-        // width: var(--card__img--size);
+    > img.card__img {
         height: 180px;
     }
 

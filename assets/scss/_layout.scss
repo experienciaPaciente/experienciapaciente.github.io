@@ -88,6 +88,16 @@ body {
     }
 }
 
+.ep__logo--desktop {
+    display: none;
+}
+
+.ep__logo--responsive {
+    display: block;
+    width: 60px;
+    height: 60px;
+}    
+
 main {
     height: fit-content;
     width: 100vw;
@@ -96,11 +106,20 @@ main {
 .wrapper--row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    // grid-auto-flow: dense;
     width: 100%;
     align-self: center;
     gap: 2rem;
     margin-top: 1.5rem;
+
+    > a {
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
     .link__logo {
         display: flex;

@@ -1,13 +1,15 @@
 @media screen and (min-width: 860px) {
 
-    header {
-        #ep__logo--responsive {
+    header, main {
+        
+        .ep__logo--responsive {
             display: none;
         }
-
-        #ep__logo--desktop {
+    
+        .ep__logo--desktop {
             display: block;
-            height: 100%;
+            width: 255px;
+            height: 43px;
         }
     }
     
@@ -38,7 +40,7 @@
        }
        
         &[type=transparent]:nth-child(1) {
-            --panel__padding: 0 var(--page__body--padding)!important;
+            --panel__padding: .5rem var(--page__body--padding) 4rem var(--page__body--padding)!important;
             --panel__direction: row-reverse;
             --panel__gap: 2.5rem;
         }

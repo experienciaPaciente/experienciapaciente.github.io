@@ -90,6 +90,16 @@ pre {
 
 a {
 	background-color: transparent;
+	text-decoration: underline;
+	color: var(--secondary);
+
+    &:hover {
+        color: var(--ep-color-blue-500);
+    }
+
+    &:visited {
+        color: var(--ep-color-blue-500);
+    }
 }
 
 /**
@@ -373,7 +383,7 @@ template {
 
 // EXTENSION
 // Links
-a, ul, li {
+ul, li {
 	text-decoration: none;
 	color: inherit;
 	list-style: none;
