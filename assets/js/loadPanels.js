@@ -4,7 +4,7 @@ const panels = [
         type: 'transparent',
         prefix: true,
         title: `Aquí comienza tu<br><b>Historia de Salud</b>`,
-        subtitle: `Iniciativa colaborativa, no gubernamental y sin fines de lucro que promueve la democratización del acceso a los datos digitales de salud.`,
+        subtitle: `Iniciativa colaborativa, no gubernamental y sin fines de lucro que propone repensar y transformar la forma en la que interactuamos con el sistema de salud.`,
         img: './assets/img/ep__img--01.png',
         btnLink: 'Conocé los proyectos',
         btnLink2: 'Quiero colaborar!',
@@ -18,8 +18,8 @@ const panels = [
         id: 2,
         type: 'dark',
         prefix: false,
-        title: 'Proyectos de experiencia<b>Paciente</b>',
-        subtitle: `Explorá los proyectos que hay detrás de la transformación concebida para mejorar cada aspecto que integra la experiencia del paciente.`,
+        title: 'Proyectos activos de experiencia<b>Paciente</b>',
+        subtitle: `Cada proyecto aborda una problemática del sistema de salud, combinando análisis, enfoque teórico y soluciones tecnológicas concretas con prototipos y documentación aplicable.`,
         img: '',
         itemsType: 'list',
         footer: false,
@@ -32,7 +32,7 @@ const panels = [
                 imgUrl: './../assets/img/ep__img--huds.png',
                 direction: 'row',
                 category: 'Comunicación',
-                buttonLabel: 'Conocer más',
+                buttonLabel: 'Quiero saber más',
                 buttonUrl: 'https://medium.com/@pacientexperiencia/fuera-del-c%C3%ADrculo-f1b67e3291d6'
             },
             {
@@ -43,7 +43,7 @@ const panels = [
                 imgUrl: './../assets/img/ep__img--infra.png',
                 direction: 'row',
                 category: 'Entorno',
-                buttonLabel: 'Conocer más',
+                buttonLabel: 'Quiero saber más',
                 buttonUrl: 'https://medium.com/@pacientexperiencia/el-espacio-físico-también-es-parte-de-la-experiencia-del-paciente-a4ec0cb34707'
             }
         ]
