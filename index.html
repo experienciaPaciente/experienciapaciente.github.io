@@ -17,6 +17,23 @@
         <script defer>
             includeHTML();
         </script>
+        <script>
+            function scrollToHashWhenReady(retries = 20) {
+              const hash = window.location.hash;
+              if (!hash) return;
+            
+              const el = document.querySelector(hash);
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+              } else if (retries > 0) {
+                setTimeout(() => scrollToHashWhenReady(retries - 1), 300);
+              }
+            }
+            
+            window.addEventListener('load', () => {
+              scrollToHashWhenReady();
+            });
+        </script>
         </main>
         <!-- footer -->
         <footer>
