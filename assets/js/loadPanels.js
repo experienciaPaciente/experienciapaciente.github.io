@@ -89,7 +89,7 @@ function getPanels(panel) {
                     </ul>`: ''}
                     ${panel.footer === true ?
                    `<span class="wrapper--row">
-                        <a class="link__logo" href="https://medium.com/@pacientexperiencia/fuera-del-c%C3%ADrculo-f1b67e3291d6" target="_blank">
+                        <a class="link__logo" href="https://medium.com/@pacientexperiencia/los-pilares-de-experienciapaciente-22e5d57e21b6" target="_blank">
                             <img src="./assets/img/icon__medium.svg"width="30" height="30"/>
                             <p>Leer el manifiesto</p>
                         </a>     
